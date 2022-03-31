@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route} from "react-router-dom";
+
+import { Courses } from "./Pages/Courses";
+import { Meetings } from "./Pages/Meetings";
+import { Tasks } from "./Pages/Tasks";
+import { Users } from "./Pages/Users";
+import { Loader } from "./Pages/Loader";
+import { Profile } from "./Pages/Profile";
+
+import { Layout } from "./Components/Layout";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="courses" element={<Courses name="Курсы" but="курс" />} />
+          <Route path="tasks" element={<Tasks name="Задачи" but="задачу" />} />
+          <Route path="meetings" element={<Meetings name="Встречи" but="встречу" />} />
+          <Route path="profile" element={<Profile name="Профиль" />} />
+          <Route path="users" element={<Users name="Пользователи" />} />
+          <Route index path="*" element={<Loader name="Welcome to Studygram!" />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+
+import "./Style/App.css";
+import "./Style/Fonts.css";
+import"./Style/Spinner.scss";
+import "./Script/Script.js";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import Popper from '@popperjs/core';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
+    < BrowserRouter>
     <App />
+    </ BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Segoe UI";
+  src: local("Segoe UI"), url(/src/Fonts/Segoe_UI.ttf);
+}
+@font-face {
+  font-family: "Segoe UI Bold";
+  src: local("Segoe UI Bold"), url(/src/Fonts/Segoe_UI_Bold.ttf);
+}
+@font-face {
+  font-family: "Segoe UI Bold Italic";
+  src: local("Segoe UI Bold Italic"), url(/src/Fonts/Segoe_UI_Bold_Italic.ttf);
+}
+@font-face {
+  font-family: "Segoe UI Italic";
+  src: local("Segoe UI Italic"), url(/src/Fonts/Segoe_UI_Italic.ttf);
+}
+@font-face {
+    font-family: "Inter";
+    src: local("Inter"), url(/src/Fonts/Inter-Regular.otf);
+}
