@@ -1,3 +1,5 @@
+/* S E G O E */
+
 @font-face {
   font-family: "Segoe UI";
   src: local("Segoe UI"), url(/src/Fonts/Segoe_UI.ttf);
@@ -7,14 +9,90 @@
   src: local("Segoe UI Bold"), url(/src/Fonts/Segoe_UI_Bold.ttf);
 }
 @font-face {
-  font-family: "Segoe UI Bold Italic";
-  src: local("Segoe UI Bold Italic"), url(/src/Fonts/Segoe_UI_Bold_Italic.ttf);
-}
-@font-face {
   font-family: "Segoe UI Italic";
   src: local("Segoe UI Italic"), url(/src/Fonts/Segoe_UI_Italic.ttf);
 }
 @font-face {
-    font-family: "Inter";
-    src: local("Inter"), url(/src/Fonts/Inter-Regular.otf);
+  font-family: "Segoe UI Bold Italic";
+  src: local("Segoe UI Bold Italic"), url(/src/Fonts/Segoe_UI_Bold_Italic.ttf);
+}
+
+
+/* I N T E R */
+
+@font-face {
+    font-family: "Inter Black";
+    src: local("Inter Black"), url(/src/Fonts/Inter-Black.otf);
+}
+@font-face {
+  font-family: "Inter Black Italic";
+  src: local("Inter Black Italic"), url(/src/Fonts/Inter-BlackItalic.otf);
+}
+@font-face {
+  font-family: "Inter Bold";
+  src: local("Inter Bold"), url(/src/Fonts/Inter-Bold.otf);
+}
+@font-face {
+  font-family: "Inter Bold Italic";
+  src: local("Inter Bold Italic"), url(/src/Fonts/Inter-BoldItalic.otf);
+}
+@font-face {
+  font-family: "Inter Extra Bold";
+  src: local("Inter Extra Bold"), url(/src/Fonts/Inter-ExtraBold.otf);
+}
+@font-face {
+  font-family: "Inter Extra Bold Italic";
+  src: local("Inter Extra Bold Italic"), url(/src/Fonts/Inter-ExtraBoldItalic.otf);
+}
+@font-face {
+  font-family: "Inter Extra Light";
+  src: local("Inter Extra Light"), url(/src/Fonts/Inter-ExtraLight.otf);
+}
+@font-face {
+  font-family: "Inter Extra Light Italic";
+  src: local("InterExtra Light Italic"), url(/src/Fonts/Inter-ExtraLightItalic.otf);
+}
+@font-face {
+  font-family: "Inter Italic";
+  src: local("Inter Italic"), url(/src/Fonts/Inter-Italic.otf);
+}
+@font-face {
+  font-family: "Inter Light";
+  src: local("Inter Light"), url(/src/Fonts/Inter-Light.otf);
+}
+@font-face {
+  font-family: "Inter Light Italic";
+  src: local("Inter Light Italic"), url(/src/Fonts/Inter-LightItalic.otf);
+}
+@font-face {
+  font-family: "Inter Medium";
+  src: local("Inter Medium"), url(/src/Fonts/Inter-Medium.otf);
+}
+@font-face {
+  font-family: "Inter Medium Italic";
+  src: local("Inter Medium Italic"), url(/src/Fonts/Inter-MediumItalic.otf);
+}
+@font-face {
+  font-family: "Inter Regular";
+  src: local("Inter Regular"), url(/src/Fonts/Inter-Regular.otf);
+}
+@font-face {
+  font-family: "Inter Semi Bold";
+  src: local("Inter Semi Bold"), url(/src/Fonts/Inter-SemiBold.otf);
+}
+@font-face {
+  font-family: "Inter Semi Bold Italic";
+  src: local("Inter Semi Bold Italic"), url(/src/Fonts/Inter-SemiBoldItalic.otf);
+}
+@font-face {
+  font-family: "Inter Thin";
+  src: local("Inter Thin"), url(/src/Fonts/Inter-Thin.otf);
+}
+@font-face {
+  font-family: "Inter Thin Italic";
+  src: local("Inter Thin Italic"), url(/src/Fonts/Inter-ThinItalic.otf);
+}
+@font-face {
+  font-family: "Inter V";
+  src: local("Inter V"), url(/src/Fonts/Inter-V.ttf);
 }
