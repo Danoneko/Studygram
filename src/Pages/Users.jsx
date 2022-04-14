@@ -6,5 +6,5 @@ const Users = (props) => {
   )
 }
 
-export {Users}
+export { Users }
   

@@ -1,8 +1,8 @@
 /* ======== GLOBAL RULES ======== */
 
 :root {
-  /* Color */
 
+  /* Color */
   --global-color-grey-900: #000000;
   --global-color-grey-800: #1f2d3d;
   --global-color-grey-700: #425466;
@@ -33,7 +33,6 @@
   --global-color-green-100: #deffee;
 
   /* Fonts */
-
   --global-heading-fontSize-xl: 58px;
   --global-heading-fontSize-xm: 42px;
   --global-heading-fontSize-xs: 32px;
@@ -44,6 +43,7 @@
   --global-text-fontSize-l: 18px;
   --global-text-fontSize-m: 16px;
   --global-text-fontSize-s: 14px;
+  --global-text-fontSize-xs: 12px;
 }
 
 /* Color-text*/
@@ -79,7 +79,6 @@
 }
 
 /* Color-backgroung*/
-
 .bgcolor-grey-100 {
   background-color: var(--global-color-grey-100);
 }
@@ -118,7 +117,6 @@
 }
 
 /* Title */
-
 .title-xl {
   font-size: var(--global-heading-fontSize-xl);
   font-weight: 600;
@@ -143,7 +141,7 @@
   font-size: var(--global-heading-fontSize-s);
   font-weight: 600;
 }
-.title-ss {
+.title-xs {
   font-size: var(--global-text-fontSize-l);
   font-weight: 600;
 }
@@ -162,6 +160,10 @@
 .text-xs {
   font-size: var(--global-text-fontSize-s);
   font-weight: 600;
+}
+.text-xxs {
+  font-size: var(--global-text-fontSize-xs);
+  font-weight: 500;
 }
 @media (max-width: 632px) {
   .title-xl {
@@ -233,6 +235,15 @@ li {
   top: 0;
 }
 
+::-webkit-scrollbar { 
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--global-color-grey-300);
+  border-radius: 5px;
+}
+
+
 /* ======== HEADER ======== */
 
 .navbar-brand {
@@ -246,7 +257,7 @@ li {
 }
 .nav-item > a {
   margin: 0 0.5rem;
-  padding: 1rem 0.5rem;
+  padding: 1.5rem 0.5rem;
   color: var(--global-color-grey-500);
 }
 .navbar-collapse {
@@ -346,7 +357,9 @@ li {
   color: var(--global-color-red-900) !important;
 }
 
+
 /* ======== MAIN ======== */
+
 .main-container {
   display: inline;
   top: 0;
@@ -359,9 +372,10 @@ li {
 }
 .inner-container {
   flex: 1;
-  background-color: #66cb9f;
+  /* background-color: #66cb9f; */
   padding-left: 1rem !important;
 }
+
 
 /* ======== LOADER ======== */
 
@@ -373,7 +387,7 @@ li {
 
 .filters-container {
   width: 300px;
-  background-color: #cc5b8a;
+  /* background-color: #cc5b8a; */
 }
 .filter {
   margin-bottom: 1rem;
@@ -389,14 +403,20 @@ li {
   border: none !important;
 }
 .form-check {
-  display: block;
-  min-height: 1.5rem;
-  padding: 0;
-  margin: 0;
+  margin-bottom: 0 !important;
 }
 .filter__form {
   text-align: left;
+  overflow-y: auto;
+  max-height: 152px;
+
 }
 .filter__form > li {
   margin: 0.7rem 0;
+}
+.form__select{
+  margin: 0 !important;
+}
+.form__search{
+  margin-bottom: 0.7rem !important;
 }

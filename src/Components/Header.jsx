@@ -2,35 +2,55 @@ import { Container, NavbarBrand, Navbar, Nav, NavItem } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
-const setActive = ({ isActive }) => (isActive ? "nav-link--active" : "");
+const setActive = ({ isActive }) => (isActive ? "nav-link--active" : ""); //  активность header-link
 
 const userName = "Иван Иванов";
 
 const linksArray = [
-  { id: "courses", title: "Курсы", link: "/courses" },
-  { id: "tasks", title: "Задачи", link: "/tasks" },
-  { id: "meetings", title: "Встречи", link: "/meetings" },
-  { id: "users", title: "Пользователи", link: "/users" },
+  { id: "courses", title: "Курсы" },
+  { id: "tasks", title: "Задачи" },
+  { id: "meetings", title: "Встречи" },
+  { id: "users", title: "Пользователи" },
 ];
 
-const itemslink = linksArray.map((linksArray) => (
-  <NavLink
-    key={linksArray.id}
-    className={setActive}
-    activeClassName="nav-link"
-    to={linksArray.link}
-  >
-    {linksArray.title}
-  </NavLink>
-));
+const NaviItems = () => {
+  return (
+    <NavItem>
+      {linksArray.map((linksArray) => (
+        <NavLink
+          key={linksArray.id}
+          className={setActive}
+          to={"/" + linksArray.id}
+        >
+          {linksArray.title}
+        </NavLink>
+      ))}
+    </NavItem>
+  );
+};
 
-class NaviItems extends React.Component {
-  render() {
-    return <NavItem>{itemslink}</NavItem>;
-  }
-}
+const userArray = [
+  { id: "profile", title: "Профиль" },
+  { id: "messages", title: "Сообщения" },
+  { id: "notifications", title: "Уведомления" },
+];
+
+const UserItems = () => {
+  return (
+    <>
+      {userArray.map((userArray) => (
+        <Link
+        key={userArray.id}
+        className="dropdown-item"
+        to={"/" + userArray.id}>
+          {userArray.title}
+        </Link>
+      ))}
+    </>
+  );
+};
 
 const Header = () => {
   return (
@@ -81,15 +101,7 @@ const Header = () => {
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
                   >
-                    <a className="dropdown-item" href="/profile">
-                      Профиль
-                    </a>
-                    <a className="dropdown-item" href="/">
-                      Сообщения
-                    </a>
-                    <a className="dropdown-item" href="/">
-                      Уведомления
-                    </a>
+                    <UserItems />
                     <div className="dropdown-divider"></div>
                     <a
                       className="dropdown-item dropdown-exit text-s color-red-900"

@@ -6,4 +6,4 @@ const Meetings = (props) => {
   )
 }
 
-export {Meetings}
+export { Meetings }

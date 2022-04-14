@@ -1,7 +1,6 @@
-import { Outlet } from "react-router-dom";
-import { Filters } from "./Filters";
-
 import { Header } from "./Header";
+import { Outlet } from "react-router";
+import { Filters } from "./Filters";
 
 const Layout = () => {
   return (
@@ -12,13 +11,12 @@ const Layout = () => {
 
       <div className="container external-container">
         <div className="filters-container">
-          <Filters />
+          <Filters name="teacher" title="Преподаватели" />
         </div>
         <div className="inner-container">
-        <Outlet />
+          <Outlet />
         </div>
       </div>
-      
     </div>
   );
 };

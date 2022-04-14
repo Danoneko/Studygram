@@ -6,5 +6,5 @@ const Tasks = (props) => {
   )
 }
 
-export {Tasks}
+export { Tasks }
   

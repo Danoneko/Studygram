@@ -6,4 +6,4 @@ const Profile = (props) => {
     )
   }
   
-  export {Profile}
+  export { Profile }

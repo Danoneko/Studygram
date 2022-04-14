@@ -1,0 +1,20 @@
+[
+  { "id": 0, "role": "teacher", "name": "Андрей", "surname": "Андреев" },
+  { "id": 1, "role": "student", "name": "Василий", "surname": "Васильев" },
+  { "id": 2, "role": "teacher", "name": "Иван", "surname": "Иванов" },
+  { "id": 3, "role": "teacher", "name": "Петр", "surname": "Петров" },
+  { "id": 4, "role": "student", "name": "Мирон", "surname": "Оксимиронов" },
+  { "id": 5, "role": "teacher", "name": "Скриптонит", "surname": "Скриптонитов" },
+  { "id": 6, "role": "teacher", "name": "Чакчак", "surname": "Норис" },
+  { "id": 7, "role": "teacher", "name": "Самолет", "surname": "Байконуров" },
+  { "id": 8, "role": "student", "name": "Тимур", "surname": "Тимуров" },
+  { "id": 9, "role": "teacher", "name": "Тетрапак", "surname": "Молокоев" },
+  { "id": 10, "role": "teacher", "name": "Ольга", "surname": "Арбузова" },
+  { "id": 11, "role": "teacher", "name": "Придумать", "surname": "Тяжелоев" },
+  { "id": 12, "role": "teacher", "name": "Следующий", "surname": "Человек" },
+  { "id": 13, "role": "teacher", "name": "Имя", "surname": "Фамилия" },
+  { "id": 14, "role": "student", "name": "Тыкудаж", "surname": "Атыгдежева" },
+  { "id": 15, "role": "student", "name": "Арбидол", "surname": "Чихчихбеков" },
+  { "id": 16, "role": "student", "name": "Пред", "surname": "Последний" },
+  { "id": 17, "role": "student", "name": "Студент", "surname": "Последний" }
+]
