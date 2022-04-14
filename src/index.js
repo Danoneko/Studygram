@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import "./Style/App.css";
-import "./Style/Fonts.css";
-import"./Style/Spinner.scss";
+import './Style/App.css';
+import './Style/Fonts.css';
+import './Style/Spinner.scss';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Popper from '@popperjs/core';

@@ -1,7 +1,6 @@
 /* ======== GLOBAL RULES ======== */
 
 :root {
-
   /* Color */
   --global-color-grey-900: #000000;
   --global-color-grey-800: #1f2d3d;
@@ -235,14 +234,13 @@ li {
   top: 0;
 }
 
-::-webkit-scrollbar { 
+::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--global-color-grey-300);
   border-radius: 5px;
 }
-
 
 /* ======== HEADER ======== */
 
@@ -337,7 +335,6 @@ li {
   color: var(--global-color-grey-700) !important;
 }
 .dropdown-toggle::after {
-  background-image: url(/src/Images/Path.png);
   margin-left: 1rem !important;
   margin-top: -1rem !important;
   background-size: 100%;
@@ -357,7 +354,6 @@ li {
   color: var(--global-color-red-900) !important;
 }
 
-
 /* ======== MAIN ======== */
 
 .main-container {
@@ -375,7 +371,6 @@ li {
   /* background-color: #66cb9f; */
   padding-left: 1rem !important;
 }
-
 
 /* ======== LOADER ======== */
 
@@ -409,14 +404,13 @@ li {
   text-align: left;
   overflow-y: auto;
   max-height: 152px;
-
 }
 .filter__form > li {
   margin: 0.7rem 0;
 }
-.form__select{
+.form__select {
   margin: 0 !important;
 }
-.form__search{
+.form__search {
   margin-bottom: 0.7rem !important;
 }

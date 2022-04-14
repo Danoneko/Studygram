@@ -6,9 +6,9 @@ import data from "../Data/data.json";
 const Filters = (props) => {
   const userData = data.filter((it) => it.role === props.name); //  выборка пользователей
   const [isCollapsed, setIsCollapsed] = useState(true); // show more
-  const [users, setUsers] = useState([]); // отметка checkbox
-  const [selectedUser, setSelectedUser] = useState([]); // отметка checkbox
   const [searchTerm, setSearchTerm] = useState(''); //  live search
+  const [users, setUsers] = useState([]);
+  const [selectedUser, setSelectedUser] = useState([]);
 
   useEffect(() => {
     setUsers(userData);
