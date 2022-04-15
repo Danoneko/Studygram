@@ -1,40 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Accordion, Form, FormControl } from "react-bootstrap";
 
-import data from "../Data/data.json";
+import data from "../Data/data";
 
 const Filters = (props) => {
   const userData = data.filter((it) => it.role === props.name); //  выборка пользователей
   const [isCollapsed, setIsCollapsed] = useState(true); // show more
-  const [searchTerm, setSearchTerm] = useState(''); //  live search
-  const [users, setUsers] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(""); //  live search
+  const [users] = useState(userData);
   const [selectedUser, setSelectedUser] = useState([]);
 
-  useEffect(() => {
-    setUsers(userData);
-  }, []);
-
-  console.log(selectedUser);
-
-  function handleChange(e, user) {
-    // отметка checkbox
+  
+ props.setValue(selectedUser);
+  // console.log('fil', selectedUser);
+//  console.log('fil', props.value);
+ 
+  const handleChange = (e, data) => {
     const { name, checked } = e.target;
     if (checked) {
       if (name === "allSelect") {
         setSelectedUser(users);
       } else {
-        setSelectedUser([...selectedUser, user]);
+        setSelectedUser([...selectedUser, data]);
       }
     } else {
       if (name === "allSelect") {
         setSelectedUser([]);
       } else {
-        let tempuser = selectedUser.filter((item) => item.id !== user.id);
+        let tempuser = selectedUser.filter((item) => item.id !== data.id);
         setSelectedUser(tempuser);
       }
     }
-  }
-
+  };
 
   return (
     <>
@@ -57,6 +54,8 @@ const Filters = (props) => {
                     type="checkbox"
                     className="form-check-input"
                     name="allSelect"
+                    // allSelect selected when both length equal
+                    // selecteduser === allUser
                     checked={selectedUser?.length === users?.length}
                     onChange={(e) => handleChange(e, users)}
                   />
@@ -118,6 +117,6 @@ const Filters = (props) => {
       </div>
     </>
   );
-}
+};
 
 export { Filters };

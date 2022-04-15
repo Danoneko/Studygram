@@ -335,6 +335,7 @@ li {
   color: var(--global-color-grey-700) !important;
 }
 .dropdown-toggle::after {
+  background-image: url(/src/Images/path.png);
   margin-left: 1rem !important;
   margin-top: -1rem !important;
   background-size: 100%;

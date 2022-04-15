@@ -3,7 +3,7 @@ import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import fotoUser from "../Images/user_foto.png";
+import avatar from '../Images/photo-profile.jpg';
 
 const setActive = ({ isActive }) => (isActive ? "nav-link--active" : ""); //  активность header-link
 
@@ -23,7 +23,7 @@ const NaviItems = () => {
         <NavLink
           key={linksArray.id}
           className={setActive}
-          to={"./" + linksArray.id}
+          to={"/" + linksArray.id}
         >
           {linksArray.title}
         </NavLink>
@@ -45,7 +45,7 @@ const UserItems = () => {
         <Link
         key={userArray.id}
         className="dropdown-item"
-        to={"./" + userArray.id}>
+        to={"/" + userArray.id}>
           {userArray.title}
         </Link>
       ))}
@@ -88,7 +88,7 @@ const Header = () => {
                   >
                     <div className="photo-user">
                       <img
-                        src={fotoUser}
+                        src={avatar}
                         className="avatar"
                         alt="avatar"
                       />
