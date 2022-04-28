@@ -1,37 +1,23 @@
 import { Header } from "./Header";
 import { Outlet } from "react-router";
-import { Filters } from "./Filters";
+import { Loader } from "./Loader";
 import React, { useState } from "react";
 
-const Layout = () => {
+const Layout = ({pageArray, ...props}) => {
+  const [isFetching, setIsFetching] = useState(true);
 
-  const [value, setValue] = useState([]);
-  const [value1, setValue1] = useState([]);
-
-  console.log('lay', value);
-  console.log('lay', value1);
-
- 
+  setTimeout(() => {
+    setIsFetching(false);
+  }, 700);
 
   return (
     <div className="main-container">
       <header>
-        <Header />
+        <Header pageArray={pageArray}/>
       </header>
 
-      <div className="container external-container">
-        <div className="filters-container">
-          <Filters setValue={setValue} name="teacher" title="Преподаватели" />
-          <Filters setValue={setValue1} name="student" title="Студенты" />
-        </div>
-        
-        <div className="inner-container">
-        
-          <Outlet />
-          {value.map((user, key) => (<p key={key}>{user.name} {user.surname}</p>))}
-          {value1.map((user, key) => (<p key={key}>{user.name} {user.surname}</p>))}
-        </div>
-      </div>
+      {isFetching && <Loader />}
+      {!isFetching && <Outlet />}
     </div>
   );
 };

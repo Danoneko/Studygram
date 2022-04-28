@@ -1,0 +1,146 @@
+[
+  {
+    "id": "0",
+    "type": "teacher",
+    "name": "Андрей",
+    "surname": "Андреев",
+    "email": "000@mail.ru",
+    "avatar": "https://cdn.pixabay.com/photo/2018/07/08/21/35/human-3524862_1280.jpg"
+  },
+  {
+    "id": "1",
+    "type": "student",
+    "name": "Василий",
+    "surname": "Васильев",
+    "email": "111@mail.ru",
+    "avatar": "https://get.pxhere.com/photo/outdoor-person-girl-sun-woman-hair-white-photography-cute-summer-female-portrait-model-young-red-fashion-lady-facial-expression-hairstyle-smiling-smile-long-hair-close-up-caucasian-face-dress-happy-happiness-eye-head-skin-beauty-attractive-photo-shoot-pretty-girl-brown-hair-cute-girl-happy-girl-happy-woman-portrait-photography-supermodel-683657.jpg"
+  },
+  {
+    "id": "2",
+    "type": "teacher",
+    "name": "Иван",
+    "surname": "Иванов",
+    "email": "222@mail.ru",
+    "avatar": "https://get.pxhere.com/photo/person-people-portrait-facial-expression-hairstyle-smile-emotion-portrait-photography-134689.jpg"
+  },
+  {
+    "id": "3",
+    "type": "teacher",
+    "name": "Петр",
+    "surname": "Петров",
+    "email": "333@mail.ru",
+    "avatar": "https://get.pxhere.com/photo/person-girl-woman-hair-photography-portrait-model-youth-fashion-blue-lady-hairstyle-smile-long-hair-face-dress-eye-head-skin-beauty-blond-photo-shoot-brown-hair-portrait-photography-108386.jpg"
+  },
+  {
+    "id": "4",
+    "type": "student",
+    "name": "Мирон",
+    "surname": "Оксимиронов",
+    "email": "444@mail.ru",
+    "avatar": "https://avatars.mds.yandex.net/get-zen_doc/50509/pub_5dd594c9a29ee0330b84e121_5dd59537ddb0193a8f320251/scale_1200"
+  },
+  {
+    "id": "5",
+    "type": "teacher",
+    "name": "Скриптонит",
+    "surname": "Скриптонитов",
+    "email": "555@mail.ru",
+    "avatar": "https://all-aforizmy.ru/wp-content/uploads/2022/01/6936_43430_1a2d8f8dc6.jpg"
+  },
+  {
+    "id": "6",
+    "type": "teacher",
+    "name": "Чакчак",
+    "surname": "Норис",
+    "email": "666@mail.ru",
+    "avatar": "https://3.bp.blogspot.com/-mwwHx0xjo6E/XMnK6X2qhLI/AAAAAAAESZw/DAhrHQcpJkwlbIt_OmINRhE-ch0vyGJmACLcBGAs/s1600/ctk-chuck-norris-herec_galerie-980.jpg"
+  },
+  {
+    "id": "7",
+    "type": "teacher",
+    "name": "Самолет",
+    "surname": "Байконуров",
+    "email": "777@mail.ru",
+    "avatar": "https://avatars.mds.yandex.net/get-zen_doc/1542122/pub_5d1280293d1d8800b9bc3e3c_5d1280853d1d8800b9bc3e3f/scale_1200"
+  },
+  {
+    "id": "8",
+    "type": "student",
+    "name": "Тимур",
+    "surname": "Тимуров",
+    "email": "888@mail.ru",
+    "avatar": "https://cdn1.flamp.ru/df271521a12773528a59498632d7ba6a.jpg"
+  },
+  {
+    "id": "9",
+    "type": "teacher",
+    "name": "Тетрапак",
+    "surname": "Молокоев",
+    "email": "999@mail.ru",
+    "avatar": "https://korzina.su/upload/iblock/79d/79d14cfb9e09a2256eec89db9bd28e3a.jpg"
+  },
+  {
+    "id": "10",
+    "type": "teacher",
+    "name": "Ольга",
+    "surname": "Арбузова",
+    "email": "1010@mail.ru",
+    "avatar": "https://avatars.mds.yandex.net/get-zen_doc/1066925/pub_5fa3c8d2f278637dd48e7180_5fa3c9a8f278637dd4905531/scale_1200"
+  },
+  {
+    "id": "11",
+    "type": "teacher",
+    "name": "Придумать",
+    "surname": "Тяжелоев",
+    "email": "1111@mail.ru",
+    "avatar": "https://media.itpro.co.uk/image/private/s--G0-WwnO1--/v1572898460/itpro/images/dir_215/it_photo_107596.jpg"
+  },
+  {
+    "id": "12",
+    "type": "teacher",
+    "name": "Следующий",
+    "surname": "Человек",
+    "email": "1212@mail.ru",
+    "avatar": "https://get.pxhere.com/photo/man-person-people-woman-photography-male-portrait-spring-facial-expression-smile-senior-citizen-cool-image-eye-glasses-head-skin-beauty-emotion-portrait-photography-vision-care-209032.jpg"
+  },
+  {
+    "id": "13",
+    "type": "teacher",
+    "name": "Имя",
+    "surname": "Фамилия",
+    "email": "1313@mail.ru",
+    "avatar": "https://cdn1.flamp.ru/bc57c2126b20646180c92643db78d9f0.jpg"
+  },
+  {
+    "id": "14",
+    "type": "student",
+    "name": "Тыкудаж",
+    "surname": "Атыгдежева",
+    "email": "1414@mail.ru",
+    "avatar": "https://get.pxhere.com/photo/person-girl-woman-hair-photography-portrait-model-lady-facial-expression-smile-long-hair-close-up-face-nose-eye-head-skin-beauty-blond-organ-emotion-photo-shoot-brown-hair-portrait-photography-132433.jpg"
+  },
+  {
+    "id": "15",
+    "type": "student",
+    "name": "Арбидол",
+    "surname": "Чихчихбеков",
+    "email": "1515@mail.ru",
+    "avatar": "https://get.pxhere.com/photo/man-landscape-person-hair-city-urban-male-guy-portrait-color-fashion-business-facial-expression-hairstyle-smile-outdoors-face-sunglasses-glasses-eyewear-adult-vision-care-915304.jpg"
+  },
+  {
+    "id": "16",
+    "type": "student",
+    "name": "Пред",
+    "surname": "Последний",
+    "email": "1616@mail.ru",
+    "avatar": "https://get.pxhere.com/photo/person-people-girl-woman-hair-photography-portrait-model-spring-child-lady-facial-expression-season-smile-face-dress-eye-head-skin-beauty-blond-emotion-photo-shoot-brown-hair-portrait-photography-151299.jpg"
+  },
+  {
+    "id": "17",
+    "type": "student",
+    "name": "Студент",
+    "surname": "Последний",
+    "email": "1717@mail.ru",
+    "avatar": "https://cdn.fishki.net/upload/users/2021/05/19/366342/2a5852b006f843032acbfab040a865d1.jpg"
+  }
+]

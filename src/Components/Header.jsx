@@ -1,59 +1,64 @@
-import { Container, NavbarBrand, Navbar, Nav, NavItem } from "react-bootstrap";
+import {
+  Container,
+  NavbarBrand,
+  Navbar,
+  Nav,
+  NavItem,
+  Accordion,
+} from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
-import React from "react";
+
 import { NavLink, Link } from "react-router-dom";
-import avatar from '../Images/photo-profile.jpg';
 
-const setActive = ({ isActive }) => (isActive ? "nav-link--active" : ""); //  активность header-link
+import dataUser from "../Data/dataUser.json";
 
-const userName = "Иван Иванов";
+const setActive = ({ isActive }) =>
+  isActive ? "nav-item__nav-link--active" : ""; //  активность header-link
 
-const linksArray = [
-  { id: "courses", title: "Курсы" },
-  { id: "tasks", title: "Задачи" },
-  { id: "meetings", title: "Встречи" },
-  { id: "users", title: "Пользователи" },
-];
+const userData = dataUser[6];
+// console.log(userData);
 
-const NaviItems = () => {
-  return (
-    <NavItem>
-      {linksArray.map((linksArray) => (
-        <NavLink
-          key={linksArray.id}
-          className={setActive}
-          to={"/" + linksArray.id}
-        >
-          {linksArray.title}
-        </NavLink>
-      ))}
-    </NavItem>
-  );
-};
+const Header = ({ pageArray, ...props }) => {
 
-const userArray = [
-  { id: "profile", title: "Профиль" },
-  { id: "messages", title: "Сообщения" },
-  { id: "notifications", title: "Уведомления" },
-];
+  const NaviItems = () => {
+    return (
+      <NavItem>
+        {pageArray.map((pageArray) => (
+          <NavLink
+            key={pageArray.id}
+            className={setActive}
+            to={"/" + pageArray.id}
+          >
+            {pageArray.title}
+          </NavLink>
+        ))}
+      </NavItem>
+    );
+  };
 
-const UserItems = () => {
-  return (
-    <>
-      {userArray.map((userArray) => (
-        <Link
-        key={userArray.id}
-        className="dropdown-item"
-        to={"/" + userArray.id}>
-          {userArray.title}
-        </Link>
-      ))}
-    </>
-  );
-};
+  const profileArray = [
+    { id: "profile", title: "Профиль" },
+    { id: "messages", title: "Сообщения" },
+    { id: "notifications", title: "Уведомления" },
+  ];
 
-const Header = () => {
+  const UserItems = () => {
+    return (
+      <>
+        {profileArray.map((profileArray) => (
+          <Link
+            key={profileArray.id}
+            to={"/" + profileArray.id}
+            className="dropdown-menu__link color-grey-700"
+          >
+            {profileArray.title}
+          </Link>
+        ))}
+      </>
+    );
+  };
+
   return (
     <>
       <Navbar
@@ -73,10 +78,36 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </NavbarToggle>
           <NavbarCollapse id="responsiv-navbar-nav">
+            <Nav className="navbar__profile-phone">
+              <Accordion>
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>
+                    <div className="nav-profile__photo-user">
+                      <img
+                        src={userData.avatar}
+                        className="photo-user__avatar"
+                        alt="Аватар"
+                      />
+                    </div>
+                    <div>
+                      <div className="color-grey-700 text-m">
+                        {userData.name} {userData.surname}
+                      </div>
+                      <div className="color-grey-600 text-s">
+                        {userData.role_ru}
+                      </div>
+                    </div>
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <UserItems />
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </Nav>
             <Nav className="mr-auto">
               <NaviItems />
             </Nav>
-            <Nav>
+            <Nav className="navbar__profile-desktop">
               <div className="navbar-nav dropdown">
                 <div className="nav-item" role="tab">
                   <div
@@ -86,16 +117,20 @@ const Header = () => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <div className="photo-user">
+                    <div className="nav-profile__photo-user">
                       <img
-                        src={avatar}
-                        className="avatar"
+                        src={userData.avatar}
+                        className="photo-user__avatar"
                         alt="avatar"
                       />
                     </div>
-                    <div className="user-name">
-                      <div className="color-grey-700 text-xs">{userName}</div>
-                      <div className="type-user">Преподаватель</div>
+                    <div>
+                      <div className="color-grey-700 text-s">
+                        {userData.name} {userData.surname}
+                      </div>
+                      <div className="color-grey-600 text-xxs">
+                        {userData.type === "teacher"? "Преподаватель" : "Студент"}
+                      </div>
                     </div>
                   </div>
                   <div
@@ -104,15 +139,20 @@ const Header = () => {
                   >
                     <UserItems />
                     <div className="dropdown-divider"></div>
-                    <a
-                      className="dropdown-item dropdown-exit text-s color-red-900"
-                      href="/"
+                    <Link
+                      className="dropdown-menu__link dropdown__exit text-s color-red-900"
+                      to="/"
                     >
                       Выйти из системы
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
+            </Nav>
+            <Nav className="profile-phone__exit dropdown__exit">
+              <Link className="color-red-900 text-m" to="/">
+                Выйти из системы
+              </Link>
             </Nav>
           </NavbarCollapse>
         </Container>

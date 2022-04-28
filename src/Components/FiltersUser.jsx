@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Accordion, Form, FormControl } from "react-bootstrap";
 
-import data from "../Data/data";
+import dataUser from "../Data/dataUser.json";
 
-const Filters = (props) => {
-  const userData = data.filter((it) => it.role === props.name); //  выборка пользователей
+const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
+  const userData = dataUser.filter((it) => it.type === nameuser); //  выборка пользователей
   const [isCollapsed, setIsCollapsed] = useState(true); // show more
   const [searchTerm, setSearchTerm] = useState(""); //  live search
-  const [users] = useState(userData);
   const [selectedUser, setSelectedUser] = useState([]);
 
-  
- props.setValue(selectedUser);
-  // console.log('fil', selectedUser);
-//  console.log('fil', props.value);
- 
+  useEffect(() => {
+    setValue(selectedUser);
+  }, [setValue, selectedUser]);
+    // setValue(selectedUser);
+
+  // console.log('Filter', selectedUser);
+
   const handleChange = (e, data) => {
     const { name, checked } = e.target;
     if (checked) {
       if (name === "allSelect") {
-        setSelectedUser(users);
+        setSelectedUser(userData);
       } else {
         setSelectedUser([...selectedUser, data]);
       }
@@ -36,10 +37,14 @@ const Filters = (props) => {
   return (
     <>
       <div className="filter">
-        <Accordion alwaysOpen>
-          <Accordion.Item>
+        <Accordion>
+          {" "}
+          {/*  defaultActiveKey={['0']} alwaysOpen  всегда открытый  */}
+          <Accordion.Item eventKey="0">
             <Accordion.Header>
-              <span className="color-grey-700 text-xs">{props.title}</span>
+              <span className="color-grey-700 text-xs">
+                {titlefilter} ({selectedUser.length})
+              </span>
             </Accordion.Header>
             <Accordion.Body>
               <Form>
@@ -49,21 +54,24 @@ const Filters = (props) => {
                   placeholder="Поиск"
                   onChange={(event) => setSearchTerm(event.target.value)}
                 />
-                <div className="form-check form__select">
+                <div className="form-check form__select-all">
                   <input
                     type="checkbox"
                     className="form-check-input"
                     name="allSelect"
+                    id={nameuser}
                     // allSelect selected when both length equal
                     // selecteduser === allUser
-                    checked={selectedUser?.length === users?.length}
-                    onChange={(e) => handleChange(e, users)}
+                    checked={selectedUser?.length === userData?.length}
+                    onChange={(e) => handleChange(e, userData)}
                   />
-                  <label className="form-check-label">Все</label>
+                  <label htmlFor={nameuser} className="form-check-label">
+                    Все
+                  </label>
                 </div>
                 <ul className="form-check filter__form">
-                  {users &&
-                    users
+                  {userData &&
+                    userData
                       .filter((val) => {
                         //  live search
                         if (searchTerm === "") {
@@ -81,7 +89,7 @@ const Filters = (props) => {
                           } else return false;
                         }
                       })
-                      .slice(0, isCollapsed ? 4 : users.length) // show more
+                      .slice(0, isCollapsed ? 4 : userData.length) // show more
                       .map(
                         (
                           user,
@@ -91,13 +99,17 @@ const Filters = (props) => {
                             <input
                               type="checkbox"
                               className="form-check-input"
-                              name={user.name}
+                              name={user.id}
+                              id={user.id}
                               checked={selectedUser.some(
                                 (item) => item?.id === user.id
                               )}
                               onChange={(e) => handleChange(e, user)}
                             />
-                            <label className="form-check-label">
+                            <label
+                              htmlFor={user.id}
+                              className="form-check-label"
+                            >
                               {user.name} {user.surname}
                             </label>
                           </li>
@@ -119,4 +131,4 @@ const Filters = (props) => {
   );
 };
 
-export { Filters };
+export { FiltersUser };

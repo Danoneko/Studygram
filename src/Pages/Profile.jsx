@@ -1,8 +1,10 @@
+import { Container } from "react-bootstrap";
+
 const Profile = (props) => {
     return(
-      <div>
-        <h1 className="title-m">{props.name}</h1>
-      </div>
+      <Container className="external-container">
+        <h1 className="title-m">{props.titlePage}</h1>
+      </Container>
     )
   }
   
