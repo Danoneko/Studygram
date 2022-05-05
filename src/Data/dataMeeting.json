@@ -7,7 +7,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }, { "id": "3" }],
-      "students": [{ "id": "0" }]
+      "students": [{ "id": "1" }]
     },
     {
       "id": "1",
@@ -17,7 +17,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "4" }, { "id": "2" }],
-      "students": [{ "id": "3" }]
+      "students": [{ "id": "15" }]
     },
     {
       "id": "2",
@@ -37,7 +37,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }, { "id": "5" }],
-      "students": [{ "id": "9" }]
+      "students": [{ "id": "1" }]
     },
     {
       "id": "4",
@@ -87,7 +87,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }, { "id": "12" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "1" }]
     },
     {
       "id": "9",
@@ -97,7 +97,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }, { "id": "13" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "4" }]
     },
     {
       "id": "10",
@@ -107,7 +107,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" }]
     },
     {
       "id": "11",
@@ -117,7 +117,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "14" }]
     },
     {
       "id": "12",
@@ -127,7 +127,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "15" }]
     },
     {
       "id": "13",
@@ -137,7 +137,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "16" }]
     },
     {
       "id": "14",
@@ -147,7 +147,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "17" }]
     },
     {
       "id": "15",
@@ -157,7 +157,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "1" }, { "id": "4" }]
     },
     {
       "id": "16",
@@ -167,7 +167,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }]
     },
     {
       "id": "17",
@@ -177,7 +177,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "1" },{ "id": "8" }]
     },
     {
       "id": "18",
@@ -187,7 +187,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "1" }, { "id": "14" }]
     },
     {
       "id": "19",
@@ -197,7 +197,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "4" }, { "id": "8" }]
     },
     {
       "id": "20",
@@ -207,7 +207,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "4" },{ "id": "14" }]
     },
     {
       "id": "21",
@@ -217,7 +217,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "4" },{ "id": "15" }]
     },
     {
       "id": "22",
@@ -227,7 +227,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "4" }, { "id": "16" }, { "id": "17" }]
     },
     {
       "id": "23",
@@ -317,7 +317,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }, { "id": "12" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" }]
     },
     {
       "id": "32",
@@ -327,7 +327,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }, { "id": "13" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" }, { "id": "14" }]
     },
     {
       "id": "33",
@@ -337,7 +337,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "1" }]
     },
     {
       "id": "34",
@@ -347,7 +347,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" },{ "id": "15" }, { "id": "16" }, { "id": "17" }]
     },
     {
       "id": "35",
@@ -357,7 +357,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" }, { "id": "15" }]
     },
     {
       "id": "36",
@@ -367,7 +367,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" }, { "id": "16" }]
     },
     {
       "id": "37",
@@ -377,7 +377,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" },{ "id": "17" }]
     },
     {
       "id": "38",
@@ -387,7 +387,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
     },
     {
       "id": "39",
@@ -397,7 +397,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "14" }, { "id": "15" }]
     },
     {
       "id": "40",
@@ -407,7 +407,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "14" },{ "id": "16" }]
     },
     {
       "id": "41",
@@ -417,7 +417,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "14" }, { "id": "17" }]
     },
     {
       "id": "42",
@@ -427,7 +427,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "14" },{ "id": "16" }, { "id": "17" }]
     },
     {
       "id": "43",
@@ -437,7 +437,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" }, { "id": "14" },{ "id": "16" }, { "id": "17" }]
     },
     {
       "id": "44",
@@ -447,7 +447,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "17" }]
     },
     {
       "id": "45",
@@ -457,7 +457,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
     },
     {
       "id": "46",
@@ -527,7 +527,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }, { "id": "10" }],
-      "students": [{ "id": "17" }]
+      "students": [{ "id": "1" }]
     },
     {
       "id": "53",
@@ -547,7 +547,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }, { "id": "12" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "1" },{ "id": "8" }, { "id": "14" }, { "id": "16" }]
     },
     {
       "id": "55",
@@ -557,7 +557,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }, { "id": "13" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "1" }]
     },
     {
       "id": "56",
@@ -567,7 +567,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "4" }]
     },
     {
       "id": "57",
@@ -577,7 +577,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" }]
     },
     {
       "id": "58",
@@ -587,7 +587,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "14" }]
     },
     {
       "id": "59",
@@ -597,7 +597,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "15" }]
     },
     {
       "id": "60",
@@ -607,7 +607,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "16" }, { "id": "17" }]
     },
     {
       "id": "61",
@@ -617,7 +617,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "16" }]
     },
     {
       "id": "62",
@@ -627,7 +627,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "17" }]
     },
     {
       "id": "63",
@@ -637,7 +637,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "1" }, { "id": "4" }]
     },
     {
       "id": "64",
@@ -647,7 +647,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "4" }, { "id": "8" }]
     },
     {
       "id": "65",
@@ -657,7 +657,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [ { "id": "8" }, { "id": "14" }]
     },
     {
       "id": "66",
@@ -667,7 +667,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "14" }, { "id": "15" }]
     },
     {
       "id": "67",
@@ -677,7 +677,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "15" }, { "id": "16" }]
     },
     {
       "id": "68",
@@ -687,7 +687,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "16" }, { "id": "17" }]
     },
     {
       "id": "69",
@@ -697,7 +697,7 @@
       "date_finish": "06/30/2022",
       "status": "active",
       "teachers": [{ "id": "6" }],
-      "students": [{ "id": "1" }, { "id": "4" }, { "id": "8" }, { "id": "14" }, { "id": "15" }, { "id": "16" }, { "id": "17" }]
+      "students": [{ "id": "8" }, { "id": "16" }]
     }  
   ]
   

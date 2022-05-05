@@ -9,6 +9,8 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
   const [searchTerm, setSearchTerm] = useState(""); //  live search
   const [selectedUser, setSelectedUser] = useState([]);
 
+  // console.log(userData);
+
   useEffect(() => {
     setValue(selectedUser);
   }, [setValue, selectedUser]);
@@ -19,13 +21,13 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
   const handleChange = (e, data) => {
     const { name, checked } = e.target;
     if (checked) {
-      if (name === "allSelect") {
+      if (name === "allSelect_user") {
         setSelectedUser(userData);
       } else {
         setSelectedUser([...selectedUser, data]);
       }
     } else {
-      if (name === "allSelect") {
+      if (name === "allSelect_user") {
         setSelectedUser([]);
       } else {
         let tempuser = selectedUser.filter((item) => item.id !== data.id);
@@ -33,6 +35,14 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
       }
     }
   };
+
+//   const [click, setClick] = useState(false);
+
+// function foo(){
+//   document.getElementById(nameuser).click();
+// }
+//   setTimeout(foo,10000)
+
 
   return (
     <>
@@ -58,9 +68,9 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
                   <input
                     type="checkbox"
                     className="form-check-input"
-                    name="allSelect"
+                    name="allSelect_user"
                     id={nameuser}
-                    // allSelect selected when both length equal
+                    // allSelect_user selected when both length equal
                     // selecteduser === allUser
                     checked={selectedUser?.length === userData?.length}
                     onChange={(e) => handleChange(e, userData)}
@@ -100,14 +110,14 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
                               type="checkbox"
                               className="form-check-input"
                               name={user.id}
-                              id={user.id}
+                              id={"user_" + user.id}
                               checked={selectedUser.some(
                                 (item) => item?.id === user.id
                               )}
                               onChange={(e) => handleChange(e, user)}
                             />
                             <label
-                              htmlFor={user.id}
+                              htmlFor={"user_" + user.id}
                               className="form-check-label"
                             >
                               {user.name} {user.surname}

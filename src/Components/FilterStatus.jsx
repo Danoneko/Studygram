@@ -20,13 +20,13 @@ const FiltersStatus = ({ setValue, ...props }) => {
   const handleChange = (e, data) => {
     const { name, checked } = e.target;
     if (checked) {
-      if (name === "allSelect") {
+      if (name === "allSelect_status") {
         setSelectedStatus(statusArray);
       } else {
         setSelectedStatus([...selectedStatus, data]);
       }
     } else {
-      if (name === "allSelect") {
+      if (name === "allSelect_status") {
         setSelectedStatus([]);
       } else {
         let tempstatus = selectedStatus.filter((item) => item.id !== data.id);
@@ -55,14 +55,14 @@ const FiltersStatus = ({ setValue, ...props }) => {
                   <input
                     type="checkbox"
                     className="form-check-input"
-                    name="allSelect"
-                    // allSelect selected when both length equal
+                    name="allSelect_status"
+                    // allSelect_status selected when both length equal
                     // selectedstatus === allUser
-                    id="allSelect"
+                    id="allSelect_status"
                     checked={selectedStatus?.length === statusArray?.length}
                     onChange={(e) => handleChange(e, statusArray)}
                   />
-                  <label htmlFor="allSelect" className="form-check-label">
+                  <label htmlFor="allSelect_status" className="form-check-label">
                     Все {props.text}
                   </label>
                 </div>

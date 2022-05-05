@@ -1,5 +1,11 @@
-import { Button, Form, FormControl, ListGroup } from "react-bootstrap";
-import React, { useState, useEffect } from "react";
+import {
+  Button,
+  Form,
+  FormControl,
+  ListGroup,
+  Pagination,
+} from "react-bootstrap";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import dataCourse from "../Data/dataCource.json";
@@ -34,7 +40,7 @@ const InnerContainer = ({
 }) => {
   // console.log(pageArray);
   // console.log(teachers);
-  // console.log(students);
+  // console.log("Студенты: ", students);
   // console.log(statuses);
   // console.log(cource);
   // console.log(name);
@@ -47,6 +53,7 @@ const InnerContainer = ({
   // console.log(innerArray);
 
   let bigData; // по имени страницы определяем с какими данными будем работать
+
   if (name === "courses") {
     bigData = dataCourse;
   }
@@ -56,39 +63,92 @@ const InnerContainer = ({
   if (name === "meetings") {
     bigData = dataMeeting;
   }
-  // console.log(bigData)
+  // console.log(bigData);
 
   const [searchTerm, setSearchTerm] = useState(""); //  live search
   const [blocks, setBlocks] = useState(bigData); // построение/поведение/ре-рендеринг блоков
   const [selectedBlock, setSelectedBlock] = useState([]); // выбранные блоки
   const [sortClick, setSortClick] = useState(false); //  сортировка по клику
+  const [changeStatuses, setChangestatuses] = useState(); // удаление/восстановление встречи/задачи/курса
+  const [studBlock] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [blocksPage, setBlocksPage] = useState(10);
 
-  //   const ApplyStatus = useCallback(() => {
+  const lastBlocksIndex = currentPage * blocksPage; // индекс последней страницы
+  const firstBlocksIndex = lastBlocksIndex - blocksPage; // индекс первой страницы
+  const currentBlocksIndex = blocks.slice(firstBlocksIndex, lastBlocksIndex);
 
-  //     setBlocks(rez);
-  //   }, [rez]);
+  useEffect(() => {
+    var rez = bigData;
 
-  // },[]);
+    function applyCourse(i) {
+      rez = [];
+      var res = i.map((a) => bigData.filter((b) => a.id === b.id_cource));
+      res.map((a) => a.map((b) => rez.push(b)));
 
-  const ApplyStatus = (i) => {
-    var rez;
-    if (i.length === 1) {
-      i = i.reduce((it) => it);
-      rez = bigData.filter((a) => a.status === i.id);
-    } else {
-      rez = bigData;
+      return rez;
     }
-    // console.log("i got it", i);
 
-    useEffect(() => {
-      setBlocks(rez);
-    }, [rez]);
+    const applyTeachers = (i) => {
+      rez = [];
+      i.map((a) =>
+        bigData.map((b) =>
+          b.teachers.map((c) => (c.id === a.id ? rez.push(b) : []))
+        )
+      );
+      return rez;
+    };
 
-    console.log(rez);
-  };
-  ApplyStatus(statuses);
+    const applyStudents = (i) => {
+      var rez1 = [];
+      rez = [];
+      var rezStudBlock = studBlock.filter(
+        // удаляем дубликаты
+        (thing, index, self) =>
+          index === self.findIndex((t) => t.id === thing.id)
+      );
+      // console.log(rezStudBlock);
 
-  const handleChange = (e, data) => {
+      i.map((a) =>
+        rezStudBlock.map((b) =>
+          b.rez.map((c) => (c.id === a.id ? rez1.push({ id: b.id }) : []))
+        )
+      );
+
+      rez1.map((a) => bigData.map((b) => (b.id === a.id ? rez.push(b) : [])));
+
+      // console.log("applyStudents", rez);
+      return rez;
+    };
+
+    const applyStatuses = (i) => {
+      if (i.length === 1) {
+        i = i.reduce((it) => it);
+        rez = bigData.filter((a) => a.status === i.id);
+      } else {
+        rez = bigData;
+      }
+      return rez;
+    };
+
+    if (statuses.length !== 0) {
+      applyStatuses(statuses);
+    }
+    if (teachers.length !== 0) {
+      applyTeachers(teachers);
+    }
+    if (name !== "courses" && cource.length !== 0) {
+      applyCourse(cource);
+    }
+    if (students.length !== 0) {
+      applyStudents(students);
+    }
+
+    // console.log("all",rez);
+    setBlocks(rez);
+  }, [name, cource, teachers, students, studBlock, statuses, bigData]);
+
+  function handleChange(e, data) {
     // отметка всех/конкретного чекбокса
     const { name, checked } = e.target;
     if (checked) {
@@ -105,112 +165,29 @@ const InnerContainer = ({
         setSelectedBlock(tempblock);
       }
     }
-  };
+  }
   // console.log(selectedBlock);  // все выбранные блоки здесь
 
-  const ReplaceDate = ({ dateStr }) => {
+  function replaceDate(dateStr) {
     // замена даты с api на привычную
     const dateArr = dateStr.split("/");
     return dateArr[1] + "." + dateArr[0] + "." + dateArr[2];
-  };
+  }
   // console.log(ReplaceDate("03/22/2022"));
 
-  const InnerBlock = () => {
-    // внутренний блок курса/задачи/встречи
-    function teach(it) {
-      let res = it.teachers.map((i) => dataUser.find((a) => a.id === i.id));
-      let rez = res.reduce((i) => i);
-      return (
-        <div className="inner-container__block-user">
-          {rez.name} {rez.surname}
-        </div>
-      );
-    }
-    return blocks
-      .filter((val) => {
-        //  live search
-        if (searchTerm === "") {
-          return val;
-        } else {
-          if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-            return val;
-          } else return false;
-        }
-      })
-      .map((it, key) => (
-        <ListGroup.Item className="inner-container__block" key={key}>
-          <div className="form-check inner-container__name">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id={it.id}
-              name={it.id}
-              checked={selectedBlock.some((item) => item?.id === it.id)}
-              onChange={(e) => handleChange(e, it)}
-            />
-            <label htmlFor="{it.id}" className="form-check-label">
-              <Link to={name + it.id}>
-                {it.name} {it.id}
-              </Link>
-            </label>
-          </div>
+  function teach(it) {
+    // вывод всех учителей из пользователей, состоящих в массиве с id учителями в курсе/задаче/встрече
+    var res = it.teachers.map((i) => dataUser.find((a) => a.id === i.id));
+    var rez = res.map((a, key) => (
+      <div key={key} className="inner-container__block-user">
+        {a.name} {a.surname}
+      </div>
+    ));
+    // console.log(res);
+    return rez;
+  }
 
-          {name !== "courses" ? (
-            <div className="inner-container__block-date">
-              <ReplaceDate dateStr={it.date_start} /> -
-              <ReplaceDate dateStr={it.date_finish} />
-            </div>
-          ) : (
-            <></>
-          )}
-
-          <div className="inner-container__block-teachers">{teach(it)}</div>
-          <div className="inner-container__block-students">
-            <UsersInBlock
-              it={it}
-              bigData={bigData}
-              name={name}
-              type="students"
-            />
-          </div>
-          <div className="inner-container__block-status">
-            <div
-              className={
-                it.status === "active" ? "status__active" : "status__deleted"
-              }
-            >
-              {it.status === "active" ? "Активен" : "Удален"}
-            </div>
-            <div className="dropdown">
-              <button
-                className="btn dropdown-toggle status__dropdown-toggle"
-                type="button"
-                id="dropdownMenu1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  src={dots}
-                  width="24px"
-                  height="24px"
-                  alt="Сортировать"
-                  className="sort__img"
-                />
-              </button>
-              <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li>
-                  <button className="dropdown-item" type="button">
-                    Удалить
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </ListGroup.Item>
-      ));
-  };
-
-  const Sorting = (value) => {
+  function sorting(value) {
     const copyData = bigData.concat();
     let sortData;
     if (value !== "data_start") {
@@ -248,7 +225,56 @@ const InnerContainer = ({
     }
 
     // console.log(sortData);
-  };
+  }
+
+  function changeStatusBlock(it) {
+    // var rez = bigData.find((i) => i.id === it.id);
+    if (it.status === "active") {
+      it.status = "deleted";
+    } else {
+      it.status = "active";
+    }
+    setChangestatuses(it.status);
+    // console.log(it.status);
+  }
+
+  function changeStatusBlocks() {
+    var rez = [];
+    if (changeStatuses === "delete") {
+      rez = selectedBlock.map((i) => (i.status = "deleted"));
+    } else {
+      rez = selectedBlock.map((i) => (i.status = "active"));
+    }
+    setChangestatuses(rez);
+    // console.log(rez);
+  }
+
+  // console.log(blocksPage);
+  const pageNumders = [];
+  for (let i = 1; i <= Math.ceil(blocks.length / blocksPage); i++) {
+    pageNumders.push(i);
+  }
+
+  function paginate(pageNumder) {
+    setCurrentPage(pageNumder);
+  }
+
+  // console.log(currentPage);
+
+  function previousPage() {
+    if (currentPage !== 1) {
+      setCurrentPage((prev) => prev - 1);
+    }
+  }
+
+  function nextPage() {
+    if (
+      currentPage !== 1 &&
+      currentPage !== Math.ceil(bigData.length / blocksPage)
+    ) {
+      setCurrentPage((prev) => prev + 1);
+    }
+  }
 
   return (
     // основной внутренний контейнер
@@ -276,11 +302,18 @@ const InnerContainer = ({
           <ListGroup.Item>
             {" "}
             <Form className="inner-container__form">
-              <Form.Select>
-                <option value="1">Действия</option>
-                <option value="1">Удалить</option>
+              <Form.Select
+                onChange={(e) => {
+                  setChangestatuses(e.target.value);
+                }}
+              >
+                <option>Действия</option>
+                <option value="delete">Удалить</option>
+                <option value="recover">Восстановить</option>
               </Form.Select>
-              <Button variant="success">Применить</Button>
+              <Button variant="success" onClick={() => changeStatusBlocks()}>
+                Применить
+              </Button>
             </Form>
             <Form className="inner-container__form">
               <FormControl
@@ -310,7 +343,7 @@ const InnerContainer = ({
               </div>
               <div
                 onClick={() => {
-                  Sorting("name");
+                  sorting("name");
                 }}
               >
                 {imageSort}
@@ -321,7 +354,7 @@ const InnerContainer = ({
                 Дата
                 <div
                   onClick={() => {
-                    Sorting("date_start");
+                    sorting("date_start");
                   }}
                 >
                   {imageSort}
@@ -334,7 +367,7 @@ const InnerContainer = ({
               Преподаватели
               {/* <div
               onClick={() => {
-                Sorting("teachers");
+                sorting("teachers");
               }}
               >
                 {imageSort}
@@ -344,7 +377,7 @@ const InnerContainer = ({
               Участники
               {/* <div
               onClick={() => {
-                Sorting("name");
+                sorting("name");
               }}
               >
                 {imageSort}
@@ -354,14 +387,160 @@ const InnerContainer = ({
               Статус
               <div
                 onClick={() => {
-                  Sorting("status");
+                  sorting("status");
                 }}
               >
                 {imageSort}
               </div>
             </div>
           </ListGroup.Item>
-          <InnerBlock />
+          {currentBlocksIndex
+            .filter((val) => {
+              //  live search
+              if (searchTerm === "") {
+                return val;
+              } else {
+                if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  return val;
+                } else return false;
+              }
+            })
+            .map((it, key) => (
+              <ListGroup.Item className="inner-container__block" key={key}>
+                <div className="form-check inner-container__name">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id={"block_" + it.id}
+                    name={it.id}
+                    checked={selectedBlock.some((item) => item?.id === it.id)}
+                    onChange={(e) => handleChange(e, it)}
+                  />
+                  {name !== "courses" ? (
+                    <label
+                      className="form-check-label"
+                      htmlFor={"block_" + it.id}
+                    >
+                      <div className="text-xxs color-grey-400">
+                        {dataCourse.find((i) => i.id === it.id_cource).name}
+                      </div>
+                      <div>
+                        <Link to={name + it.id}>
+                          {it.name} {it.id}
+                        </Link>
+                      </div>
+                    </label>
+                  ) : (
+                    <label
+                      className="form-check-label"
+                      htmlFor={"block_" + it.id}
+                    >
+                      <Link to={name + it.id}>
+                        {it.name} {it.id}
+                      </Link>
+                    </label>
+                  )}
+                </div>
+
+                {name !== "courses" ? (
+                  <div className="inner-container__block-date">
+                    {replaceDate(it.date_start)} -{replaceDate(it.date_finish)}
+                  </div>
+                ) : (
+                  <></>
+                )}
+
+                <div className="inner-container__block-teachers">
+                  {teach(it)}
+                </div>
+                <div className="inner-container__block-students">
+                  <UsersInBlock
+                    it={it}
+                    bigData={bigData}
+                    name={name}
+                    studBlock={studBlock}
+                  />
+                </div>
+                <div className="inner-container__block-status">
+                  <div
+                    className={
+                      it.status === "active"
+                        ? "status__active"
+                        : "status__deleted"
+                    }
+                  >
+                    {it.status === "active" ? "Активен" : "Удален"}
+                  </div>
+                  <div className="dropdown">
+                    <button
+                      className="btn dropdown-toggle status__dropdown-toggle"
+                      type="button"
+                      id="dropdownMenu1"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <img
+                        src={dots}
+                        width="24px"
+                        height="24px"
+                        alt="Сортировать"
+                        className="sort__img"
+                      />
+                    </button>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="dropdownMenu1"
+                    >
+                      <li>
+                        <button
+                          className="dropdown-item"
+                          type="button"
+                          onClick={() => changeStatusBlock(it)}
+                        >
+                          {it.status === "active"
+                            ? (changeStatuses, "Удалить")
+                            : (!changeStatuses, "Восстановить")}
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </ListGroup.Item>
+            ))}
+          <ListGroup.Item className="inner-container__footer">
+            <Form className="inner-container__footer-block">
+              <div className="text-s">Показать:</div>
+              <Form.Select
+                onChange={(e) => setBlocksPage(e.target.value)}
+                defaultValue="10"
+              >
+                <option value="5">5 строк</option>
+                <option value="10">10 строк</option>
+                <option value="20">20 строк</option>
+                <option value="50">50 строк</option>
+                <option value="100">100 строк</option>
+              </Form.Select>
+            </Form>
+            <Pagination>
+              <Pagination.First onClick={() => setCurrentPage(1)} />
+              <Pagination.Prev onClick={() => previousPage()} />
+              {pageNumders.map((number) => (
+                <Pagination.Item
+                  key={number}
+                  onClick={() => paginate(number)}
+                  className={currentPage === number ? "active" : ""}
+                >
+                  {number}
+                </Pagination.Item>
+              ))}
+              <Pagination.Next onClick={() => nextPage()} />
+              <Pagination.Last
+                onClick={() =>
+                  setCurrentPage(Math.ceil(blocks.length / blocksPage))
+                }
+              />
+            </Pagination>
+          </ListGroup.Item>
         </ListGroup>
       </div>
     </div>

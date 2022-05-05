@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Container, Accordion } from "react-bootstrap";
 
 import { FiltersUser } from "../Components/FiltersUser";
@@ -8,8 +8,7 @@ import useWindowDimensions from "../Components/WindowSize";
 
 import filterImg from "../Images/filters.svg";
 
-const Courses = ({pageArray, ...props}) => {
-
+const Courses = ({ pageArray, ...props }) => {
   const courceArray = pageArray[0];
 
   const [teachers, setTeachers] = useState([]); //  состояние преподавателей
@@ -78,9 +77,13 @@ const Courses = ({pageArray, ...props}) => {
       </div>
 
       <Container className="external-container__inner">
-        <InnerContainer name="courses" pageArray={pageArray} teachers={teachers} students={students} statuses={statuses} />
-        {/* <InnerContainer name="tasks" pageArray={pageArray} teachers={teachers} students={students} status={status} /> */}
-
+        <InnerContainer
+          name="courses"
+          pageArray={pageArray}
+          teachers={teachers}
+          students={students}
+          statuses={statuses}
+        />
       </Container>
     </Container>
   );

@@ -18,13 +18,13 @@ const FiltersCource = ({ setValue, titlefilter, ...props }) => {
   const handleChange = (e, data) => {
     const { name, checked } = e.target;
     if (checked) {
-      if (name === "allSelect") {
+      if (name === "allSelect_cource") {
         setSelectedCource(dataCource);
       } else {
         setSelectedCource([...selectedCource, data]);
       }
     } else {
-      if (name === "allSelect") {
+      if (name === "allSelect_cource") {
         setSelectedCource([]);
       } else {
         let tempcource = selectedCource.filter((item) => item.id !== data.id);
@@ -57,14 +57,14 @@ const FiltersCource = ({ setValue, titlefilter, ...props }) => {
                   <input
                     type="checkbox"
                     className="form-check-input"
-                    name="allSelect"
-                    id="allSelect"
-                    // allSelect selected when both length equal
+                    name="allSelect_cource"
+                    id="allSelect_cource"
+                    // allSelect_cource selected when both length equal
                     // selectedcource === allUser
                     checked={selectedCource?.length === dataCource?.length}
                     onChange={(e) => handleChange(e, dataCource)}
                   />
-                  <label htmlFor="allSelect" className="form-check-label">
+                  <label htmlFor="allSelect_cource" className="form-check-label">
                     Все
                   </label>
                 </div>
@@ -96,14 +96,14 @@ const FiltersCource = ({ setValue, titlefilter, ...props }) => {
                               type="checkbox"
                               className="form-check-input"
                               name={cource.id}
-                              id={cource.id}
+                              id={"cource_" + cource.id}
                               checked={selectedCource.some(
                                 (item) => item?.id === cource.id
                               )}
                               onChange={(e) => handleChange(e, cource)}
                             />
                             <label
-                              htmlFor={cource.id}
+                              htmlFor={"cource_" + cource.id}
                               className="form-check-label"
                             >
                               {cource.name} {cource.surname}
