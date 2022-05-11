@@ -1,7 +1,7 @@
 [
   {
     "id": "0",
-    "id_cource": "0",
+    "id_course": "0",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -13,7 +13,7 @@
   },
   {
     "id": "1",
-    "id_cource": "2",
+    "id_course": "2",
     "name": "Задача",
     "date_start": "09/01/2017",
     "date_finish": "06/30/2022",
@@ -25,7 +25,7 @@
   },
   {
     "id": "2",
-    "id_cource": "3",
+    "id_course": "3",
     "name": "Задача",
     "date_start": "09/01/2016",
     "date_finish": "06/30/2022",
@@ -37,7 +37,7 @@
   },
   {
     "id": "3",
-    "id_cource": "4",
+    "id_course": "4",
     "name": "Задача",
     "date_start": "09/01/1999",
     "date_finish": "06/30/2022",
@@ -49,7 +49,7 @@
   },
   {
     "id": "4",
-    "id_cource": "6",
+    "id_course": "6",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -61,7 +61,7 @@
   },
   {
     "id": "5",
-    "id_cource": "7",
+    "id_course": "7",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -73,7 +73,7 @@
   },
   {
     "id": "6",
-    "id_cource": "8",
+    "id_course": "8",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -85,7 +85,7 @@
   },
   {
     "id": "7",
-    "id_cource": "9",
+    "id_course": "9",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -97,7 +97,7 @@
   },
   {
     "id": "8",
-    "id_cource": "10",
+    "id_course": "10",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -109,7 +109,7 @@
   },
   {
     "id": "9",
-    "id_cource": "11",
+    "id_course": "11",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -121,7 +121,7 @@
   },
   {
     "id": "10",
-    "id_cource": "12",
+    "id_course": "12",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -133,7 +133,7 @@
   },
   {
     "id": "11",
-    "id_cource": "13",
+    "id_course": "13",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -145,7 +145,7 @@
   },
   {
     "id": "12",
-    "id_cource": "14",
+    "id_course": "14",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -157,7 +157,7 @@
   },
   {
     "id": "13",
-    "id_cource": "15",
+    "id_course": "15",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -169,7 +169,7 @@
   },
   {
     "id": "14",
-    "id_cource": "16",
+    "id_course": "16",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -181,7 +181,7 @@
   },
   {
     "id": "15",
-    "id_cource": "17",
+    "id_course": "17",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -193,7 +193,7 @@
   },
   {
     "id": "16",
-    "id_cource": "1",
+    "id_course": "1",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -205,7 +205,7 @@
   },
   {
     "id": "17",
-    "id_cource": "2",
+    "id_course": "2",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -217,7 +217,7 @@
   },
   {
     "id": "18",
-    "id_cource": "3",
+    "id_course": "3",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -229,7 +229,7 @@
   },
   {
     "id": "19",
-    "id_cource": "4",
+    "id_course": "4",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -241,7 +241,7 @@
   },
   {
     "id": "20",
-    "id_cource": "5",
+    "id_course": "5",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -253,7 +253,7 @@
   },
   {
     "id": "21",
-    "id_cource": "6",
+    "id_course": "6",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -265,7 +265,7 @@
   },
   {
     "id": "22",
-    "id_cource": "7",
+    "id_course": "7",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -277,7 +277,7 @@
   },
   {
     "id": "23",
-    "id_cource": "8",
+    "id_course": "8",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -289,7 +289,7 @@
   },
   {
     "id": "24",
-    "id_cource": "9",
+    "id_course": "9",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -301,7 +301,7 @@
   },
   {
     "id": "25",
-    "id_cource": "10",
+    "id_course": "10",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -313,7 +313,7 @@
   },
   {
     "id": "26",
-    "id_cource": "11",
+    "id_course": "11",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -325,7 +325,7 @@
   },
   {
     "id": "27",
-    "id_cource": "12",
+    "id_course": "12",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -337,7 +337,7 @@
   },
   {
     "id": "28",
-    "id_cource": "13",
+    "id_course": "13",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -349,7 +349,7 @@
   },
   {
     "id": "29",
-    "id_cource": "14",
+    "id_course": "14",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -361,7 +361,7 @@
   },
   {
     "id": "30",
-    "id_cource": "15",
+    "id_course": "15",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -373,7 +373,7 @@
   },
   {
     "id": "31",
-    "id_cource": "16",
+    "id_course": "16",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -385,7 +385,7 @@
   },
   {
     "id": "32",
-    "id_cource": "17",
+    "id_course": "17",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -397,7 +397,7 @@
   },
   {
     "id": "33",
-    "id_cource": "0",
+    "id_course": "0",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -409,7 +409,7 @@
   },
   {
     "id": "34",
-    "id_cource": "1",
+    "id_course": "1",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -421,7 +421,7 @@
   },
   {
     "id": "35",
-    "id_cource": "2",
+    "id_course": "2",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -433,7 +433,7 @@
   },
   {
     "id": "36",
-    "id_cource": "3",
+    "id_course": "3",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -445,7 +445,7 @@
   },
   {
     "id": "37",
-    "id_cource": "4",
+    "id_course": "4",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -457,7 +457,7 @@
   },
   {
     "id": "38",
-    "id_cource": "5",
+    "id_course": "5",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -469,7 +469,7 @@
   },
   {
     "id": "39",
-    "id_cource": "6",
+    "id_course": "6",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -481,7 +481,7 @@
   },
   {
     "id": "40",
-    "id_cource": "6",
+    "id_course": "6",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -493,7 +493,7 @@
   },
   {
     "id": "41",
-    "id_cource": "7",
+    "id_course": "7",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -505,7 +505,7 @@
   },
   {
     "id": "42",
-    "id_cource": "8",
+    "id_course": "8",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -517,7 +517,7 @@
   },
   {
     "id": "43",
-    "id_cource": "9",
+    "id_course": "9",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -529,7 +529,7 @@
   },
   {
     "id": "44",
-    "id_cource": "10",
+    "id_course": "10",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -541,7 +541,7 @@
   },
   {
     "id": "45",
-    "id_cource": "11",
+    "id_course": "11",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -553,7 +553,7 @@
   },
   {
     "id": "46",
-    "id_cource": "12",
+    "id_course": "12",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -565,7 +565,7 @@
   },
   {
     "id": "47",
-    "id_cource": "13",
+    "id_course": "13",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -577,7 +577,7 @@
   },
   {
     "id": "48",
-    "id_cource": "14",
+    "id_course": "14",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -589,7 +589,7 @@
   },
   {
     "id": "49",
-    "id_cource": "15",
+    "id_course": "15",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -601,7 +601,7 @@
   },
   {
     "id": "50",
-    "id_cource": "16",
+    "id_course": "16",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -613,7 +613,7 @@
   },
   {
     "id": "51",
-    "id_cource": "17",
+    "id_course": "17",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -625,7 +625,7 @@
   },
   {
     "id": "52",
-    "id_cource": "0",
+    "id_course": "0",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -637,7 +637,7 @@
   },
   {
     "id": "53",
-    "id_cource": "1",
+    "id_course": "1",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -649,7 +649,7 @@
   },
   {
     "id": "54",
-    "id_cource": "2",
+    "id_course": "2",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -661,7 +661,7 @@
   },
   {
     "id": "55",
-    "id_cource": "3",
+    "id_course": "3",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -673,7 +673,7 @@
   },
   {
     "id": "56",
-    "id_cource": "4",
+    "id_course": "4",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -685,7 +685,7 @@
   },
   {
     "id": "57",
-    "id_cource": "5",
+    "id_course": "5",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -697,7 +697,7 @@
   },
   {
     "id": "58",
-    "id_cource": "6",
+    "id_course": "6",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -709,7 +709,7 @@
   },
   {
     "id": "59",
-    "id_cource": "7",
+    "id_course": "7",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -721,7 +721,7 @@
   },
   {
     "id": "60",
-    "id_cource": "8",
+    "id_course": "8",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -733,7 +733,7 @@
   },
   {
     "id": "61",
-    "id_cource": "9",
+    "id_course": "9",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -745,7 +745,7 @@
   },
   {
     "id": "62",
-    "id_cource": "10",
+    "id_course": "10",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -757,7 +757,7 @@
   },
   {
     "id": "63",
-    "id_cource": "11",
+    "id_course": "11",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -769,7 +769,7 @@
   },
   {
     "id": "64",
-    "id_cource": "12",
+    "id_course": "12",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -781,7 +781,7 @@
   },
   {
     "id": "65",
-    "id_cource": "13",
+    "id_course": "13",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -793,7 +793,7 @@
   },
   {
     "id": "66",
-    "id_cource": "14",
+    "id_course": "14",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -805,7 +805,7 @@
   },
   {
     "id": "67",
-    "id_cource": "15",
+    "id_course": "15",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -817,7 +817,7 @@
   },
   {
     "id": "68",
-    "id_cource": "16",
+    "id_course": "16",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",
@@ -829,7 +829,7 @@
   },
   {
     "id": "69",
-    "id_cource": "17",
+    "id_course": "17",
     "name": "Задача",
     "date_start": "09/01/2018",
     "date_finish": "06/30/2022",

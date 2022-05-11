@@ -12,6 +12,8 @@ const FiltersStatus = ({ setValue, ...props }) => {
   // console.log("status", selectedStatus);
   // console.log(props.text);
 
+
+
   useEffect(() => {
     setValue(selectedStatus);
   }, [setValue, selectedStatus]);
@@ -58,11 +60,11 @@ const FiltersStatus = ({ setValue, ...props }) => {
                     name="allSelect_status"
                     // allSelect_status selected when both length equal
                     // selectedstatus === allUser
-                    id="allSelect_status"
+                    id={"allSelect_status"+ props.text.id}
                     checked={selectedStatus?.length === statusArray?.length}
                     onChange={(e) => handleChange(e, statusArray)}
                   />
-                  <label htmlFor="allSelect_status" className="form-check-label">
+                  <label htmlFor={"allSelect_status"+ props.text.id} className="form-check-label">
                     Все {props.text}
                   </label>
                 </div>
@@ -76,14 +78,14 @@ const FiltersStatus = ({ setValue, ...props }) => {
                         <input
                           type="checkbox"
                           className="form-check-input"
-                          name={status.id}
-                          id={status.id}
+                          name={status.id + props.text.id}
+                          id={status.id + props.text.id}
                           checked={selectedStatus.some(
                             (item) => item?.id === status.id
                           )}
                           onChange={(e) => handleChange(e, status)}
                         />
-                        <label htmlFor={status.id} className="form-check-label">
+                        <label htmlFor={status.id+props.text.id} className="form-check-label">
                           {status.title} {props.text}
                         </label>
                       </li>

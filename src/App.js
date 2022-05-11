@@ -12,6 +12,12 @@ import { Task } from "./Pages/Task";
 // import { Users } from "./Pages/Users";
 import { Profile } from "./Pages/Profile";
 
+import dataUser from "./Data/dataUser.json";
+
+const userData = dataUser[6];
+// console.log(userData);
+
+
 const pageArray = [
   { id: "courses", title: "Курсы", create: "курс", status: "курса" },
   { id: "tasks", title: "Задачи", create: "задачу", status: "задачи" },
@@ -23,15 +29,15 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout pageArray={pageArray}/>}>
+        <Route path="/" element={<Layout pageArray={pageArray} userData={userData}/>}>
           <Route path="courses" element={<Courses  pageArray={pageArray}/>} />
-          <Route path="courses/:id" element={<Course  pageArray={pageArray}/>} />
+          <Route path="courses/:id_course" element={<Course  pageArray={pageArray}/>} />
           <Route path="tasks" element={<Tasks  pageArray={pageArray}/>} />
           <Route path="tasks/:id" element={<Task  pageArray={pageArray}/>} />
           <Route path="meetings" element={<Meetings  pageArray={pageArray}/>} />
           <Route path="meetings/:id" element={<Meeting  pageArray={pageArray}/>} />
           {/* <Route path="users" element={<Users/>} /> */}
-          <Route path="profile" element={<Profile titlePage="Профиль"/>} />
+          <Route path="profile" element={<Profile titlePage="Профиль" userData={userData}/>} />
         </Route>
       </Routes>
     </>

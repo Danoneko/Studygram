@@ -12,15 +12,12 @@ import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 
 import { NavLink, Link } from "react-router-dom";
 
-import dataUser from "../Data/dataUser.json";
 
 const setActive = ({ isActive }) =>
   isActive ? "nav-item__nav-link--active" : ""; //  активность header-link
 
-const userData = dataUser[6];
-// console.log(userData);
 
-const Header = ({ pageArray, ...props }) => {
+const Header = ({ pageArray, userData, ...props }) => {
 
   const NaviItems = () => {
     return (
@@ -87,12 +84,12 @@ const Header = ({ pageArray, ...props }) => {
                       <img
                         src={userData.avatar}
                         className="photo-user__avatar"
-                        alt="Аватар"
+                        alt=""
                       />
                     </div>
                     <div>
                       <div className="color-grey-700 text-m">
-                        {userData.name} {userData.surname}
+                        {userData.first_name} {userData.surname}
                       </div>
                       <div className="color-grey-600 text-s">
                         {userData.role_ru}
@@ -122,12 +119,12 @@ const Header = ({ pageArray, ...props }) => {
                       <img
                         src={userData.avatar}
                         className="photo-user__avatar"
-                        alt="avatar"
+                        alt=""
                       />
                     </div>
                     <div>
                       <div className="color-grey-700 text-s">
-                        {userData.name} {userData.surname}
+                        {userData.first_name} {userData.surname}
                       </div>
                       <div className="color-grey-600 text-xxs">
                         {userData.type === "teacher"? "Преподаватель" : "Студент"}

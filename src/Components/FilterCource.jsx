@@ -88,25 +88,25 @@ const FiltersCource = ({ setValue, titlefilter, ...props }) => {
                       .slice(0, isCollapsed ? 4 : dataCource.length) // show more
                       .map(
                         (
-                          cource,
+                          course,
                           index //  выгрузка и отметка checkbox
                         ) => (
                           <li key={index}>
                             <input
                               type="checkbox"
                               className="form-check-input"
-                              name={cource.id}
-                              id={"cource_" + cource.id}
+                              name={course.id}
+                              id={"cource_" + course.id}
                               checked={selectedCource.some(
-                                (item) => item?.id === cource.id
+                                (item) => item?.id === course.id
                               )}
-                              onChange={(e) => handleChange(e, cource)}
+                              onChange={(e) => handleChange(e, course)}
                             />
                             <label
-                              htmlFor={"cource_" + cource.id}
+                              htmlFor={"cource_" + course.id}
                               className="form-check-label"
                             >
-                              {cource.name} {cource.surname}
+                              {course.name} {course.surname}
                             </label>
                           </li>
                         )

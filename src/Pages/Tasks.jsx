@@ -15,11 +15,11 @@ const Tasks = ({ pageArray, ...props }) => {
   const [teachers, setTeachers] = useState([]); //  состояние преподавателей
   const [students, setStudents] = useState([]); //  состояние студентов
   const [statuses, setStatuses] = useState([]); //  состояние статусa
-  const [cource, setCource] = useState([]); // состояние курсов
+  const [course, setCource] = useState([]); // состояние курсов
   // console.log("Teachers", teachers);
   // console.log("Students", students);
   // console.log("Status", statuses);
-  // console.log("Cource", cource);
+  // console.log("Cource", course);
 
   const fil = document.querySelectorAll(".filter");
   // console.log(fil.length);
@@ -30,7 +30,7 @@ const Tasks = ({ pageArray, ...props }) => {
   return (
     <Container className="external-container">
       <div className="external-container__filters">
-        {width > 768 ? (
+        {width > 769 ? (
           <>
             <FiltersCource setValue={setCource} titlefilter="Курсы" />
             <FiltersUser
@@ -88,8 +88,9 @@ const Tasks = ({ pageArray, ...props }) => {
           teachers={teachers}
           students={students}
           statuses={statuses}
-          cource={cource}
+          course={course}
         />
+        
       </Container>
     </Container>
   );

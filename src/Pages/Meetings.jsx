@@ -15,11 +15,11 @@ const Meetings = ({ pageArray, ...props }) => {
   const [teachers, setTeachers] = useState([]); //  состояние преподавателей
   const [students, setStudents] = useState([]); //  состояние студентов
   const [statuses, setStatuses] = useState([]); //  состояние статусa
-  const [cource, setCource] = useState([]); // состояние курсов
+  const [course, setCource] = useState([]); // состояние курсов
   // console.log("Teachers", teachers);
   // console.log("Students", students);
   // console.log("Status", statuses);
-  // console.log("Cource", cource);
+  // console.log("Cource", course);
 
   const fil = document.querySelectorAll(".filter");
   // console.log(fil.length);
@@ -88,7 +88,7 @@ const Meetings = ({ pageArray, ...props }) => {
           teachers={teachers}
           students={students}
           statuses={statuses}
-          cource={cource}
+          course={course}
         />
       </Container>
     </Container>

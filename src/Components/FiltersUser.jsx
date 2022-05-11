@@ -88,7 +88,7 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
                           return val;
                         } else {
                           if (
-                            val.name
+                            val.fist_name
                               .toLowerCase()
                               .includes(searchTerm.toLowerCase()) ||
                             val.surname
@@ -120,7 +120,7 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
                               htmlFor={"user_" + user.id}
                               className="form-check-label"
                             >
-                              {user.name} {user.surname}
+                              {user.first_name} {user.surname}
                             </label>
                           </li>
                         )
