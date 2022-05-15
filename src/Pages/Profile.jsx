@@ -25,11 +25,12 @@ function saveEdits() {
   userData.surname = userName[2];
   const mail = document.getElementById("profile__email").value;
   userData.email = mail;
+  userData.avatar = "";
 }
 
   return (
     <Container className="external-container">
-      <div className=" external-container__inner inner-container inner-container--center">
+      <div className="external-container__inner inner-container inner-container--center">
         <div className="inner-container__header">
           <h1 className="title-m">{props.titlePage}</h1>
         </div>

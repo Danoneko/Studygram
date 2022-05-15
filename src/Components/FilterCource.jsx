@@ -35,7 +35,7 @@ const FiltersCource = ({ setValue, titlefilter, ...props }) => {
 
   return (
     <>
-      <div className="filter">
+      <div className="filters">
         <Accordion>
           {" "}
           {/*  defaultActiveKey={['0']} alwaysOpen  всегда открытый  */}
@@ -68,7 +68,7 @@ const FiltersCource = ({ setValue, titlefilter, ...props }) => {
                     Все
                   </label>
                 </div>
-                <ul className="form-check filter__form">
+                <ul className="form-check filters__form">
                   {dataCource &&
                     dataCource
                       .filter((val) => {

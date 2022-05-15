@@ -7,7 +7,7 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
   const userData = dataUser.filter((it) => it.type === nameuser); //  выборка пользователей
   const [isCollapsed, setIsCollapsed] = useState(true); // show more
   const [searchTerm, setSearchTerm] = useState(""); //  live search
-  const [selectedUser, setSelectedUser] = useState([]);
+  const [selectedUser, setSelectedUser] = useState([]); // выбранные пользователи здесь
 
   // console.log(userData);
 
@@ -46,7 +46,7 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
 
   return (
     <>
-      <div className="filter">
+      <div className="filters">
         <Accordion>
           {" "}
           {/*  defaultActiveKey={['0']} alwaysOpen  всегда открытый  */}
@@ -79,7 +79,7 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
                     Все
                   </label>
                 </div>
-                <ul className="form-check filter__form">
+                <ul className="form-check filters__form">
                   {userData &&
                     userData
                       .filter((val) => {
@@ -88,7 +88,7 @@ const FiltersUser = ({ setValue, nameuser, titlefilter, ...props }) => {
                           return val;
                         } else {
                           if (
-                            val.fist_name
+                            val.first_name
                               .toLowerCase()
                               .includes(searchTerm.toLowerCase()) ||
                             val.surname

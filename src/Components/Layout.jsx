@@ -1,5 +1,5 @@
 import { Header } from "./Header";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import { Loader } from "./Loader";
 import React, { useState } from "react";
 

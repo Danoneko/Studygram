@@ -5,7 +5,7 @@ import { FiltersUser } from "../Components/FiltersUser";
 import { FiltersCource } from "../Components/FilterCource";
 import { FiltersStatus } from "../Components/FilterStatus";
 import { InnerContainer } from "../Components/InnerContainer";
-import useWindowDimensions from "../Components/WindowSize";
+import useWindowDimensions from "../hoc/WindowSize";
 
 import filterImg from "../Images/filters.svg";
 
@@ -21,7 +21,7 @@ const Tasks = ({ pageArray, ...props }) => {
   // console.log("Status", statuses);
   // console.log("Cource", course);
 
-  const fil = document.querySelectorAll(".filter");
+  const fil = document.querySelectorAll(".filters");
   // console.log(fil.length);
 
   const { width } = useWindowDimensions();

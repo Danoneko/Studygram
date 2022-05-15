@@ -41,7 +41,7 @@ const FiltersStatus = ({ setValue, ...props }) => {
 
   return (
     <>
-      <div className="filter">
+      <div className="filters">
         <Accordion>
           {" "}
           {/*  defaultActiveKey={['0']} alwaysOpen  всегда открытый  */}
@@ -68,7 +68,7 @@ const FiltersStatus = ({ setValue, ...props }) => {
                     Все {props.text}
                   </label>
                 </div>
-                <ul className="form-check filter__form">
+                <ul className="form-check filters__form">
                   {statusArray.map(
                     (
                       status,

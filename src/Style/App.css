@@ -483,19 +483,19 @@ li {
 
 /* ======== FIILTERS ======== */
 
-.filter {
+.filters {
   margin-bottom: 1rem;
   min-width: 300px;
 }
 .form-check {
   margin-bottom: 0 !important;
 }
-.filter__form {
+.filters__form {
   text-align: left;
   overflow-y: auto;
   max-height: 152px;
 }
-.filter__form > li {
+.filters__form > li {
   margin: 0.7rem 0;
 }
 .form__select-all {

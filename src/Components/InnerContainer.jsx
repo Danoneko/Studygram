@@ -14,7 +14,7 @@ import dataMeeting from "../Data/dataMeeting.json";
 import dataUser from "../Data/dataUser.json";
 
 import { UsersInBlock } from "../Components/UsersInBlock";
-import useWindowDimensions from "../Components/WindowSize";
+import useWindowDimensions from "../hoc/WindowSize";
 
 import plus from "../Images/plus.svg";
 import sort from "../Images/sort.svg";
@@ -215,7 +215,7 @@ const InnerContainer = ({
       return (
         <>
           <div className="inner-container__block-user">
-            {res[0].name} {res[0].surname}
+            {res[0].first_name} {res[0].surname}
           </div>
           <button
             type="button"
@@ -569,6 +569,11 @@ const InnerContainer = ({
                               : (!changeStatuses, "Восстановить")}
                           </button>
                         </li>
+                        <li>
+                          <button className="dropdown-item" type="button">
+                            Редактировать
+                          </button>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -735,7 +740,9 @@ const InnerContainer = ({
                       </div>
                       {name !== "courses" ? (
                         <>
-                          <div className="heading-block heading-block-margin">Дата</div>
+                          <div className="heading-block heading-block-margin">
+                            Дата
+                          </div>
                           <div className="inner-container__block-date">
                             {replaceDate(it.date_start)} -
                             {replaceDate(it.date_finish)}
@@ -744,11 +751,15 @@ const InnerContainer = ({
                       ) : (
                         <></>
                       )}
-                      <div className="heading-block heading-block-margin">Переподаватели</div>
+                      <div className="heading-block heading-block-margin">
+                        Переподаватели
+                      </div>
                       <div className="inner-container__block-teachers-students">
                         {teach(it)}
                       </div>
-                      <div className="heading-block heading-block-margin">Студенты</div>
+                      <div className="heading-block heading-block-margin">
+                        Студенты
+                      </div>
                       <div className="inner-container__block-teachers-students">
                         <UsersInBlock
                           it={it}
@@ -757,7 +768,9 @@ const InnerContainer = ({
                           studBlock={studBlock}
                         />
                       </div>
-                      <div className="heading-block heading-block-margin">Статус</div>
+                      <div className="heading-block heading-block-margin">
+                        Статус
+                      </div>
                       <div className="inner-container__block-status">
                         <div
                           className={

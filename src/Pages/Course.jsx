@@ -5,7 +5,7 @@ import { Container, Accordion } from "react-bootstrap";
 import { FiltersUser } from "../Components/FiltersUser";
 import { FiltersStatus } from "../Components/FilterStatus";
 import { InnerContainer } from "../Components/InnerContainer";
-import useWindowDimensions from "../Components/WindowSize";
+import useWindowDimensions from "../hoc/WindowSize";
 
 import filterImg from "../Images/filters.svg";
 
@@ -21,7 +21,7 @@ const Course = ({ pageArray, ...props }) => {
 
   const params = useParams().id_course;
 
-  const fil = document.querySelectorAll(".filter");
+  const fil = document.querySelectorAll(".filters");
   // console.log(fil.length);
 
   const { width } = useWindowDimensions();
