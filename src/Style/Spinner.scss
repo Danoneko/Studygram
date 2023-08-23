@@ -3,7 +3,7 @@
 
 $loader-colors: #3f6ad8, #66cb9f, #f16063, #f2c94c, #f2974c, #cc5b8a;
 $loader-dash: 63;
-$loader-duration: length($loader-colors) * 2s;
+$loader-duration: length($loader-colors) * 1s;
 $loader-duration-alt: $loader-duration / length($loader-colors);
 $loader-keyframe: 1 / (length($loader-colors) * 2) * 100;
 

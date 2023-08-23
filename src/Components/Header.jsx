@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Container,
   NavbarBrand,
@@ -12,12 +12,16 @@ import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 
 import { NavLink, Link } from "react-router-dom";
 
+import useWindowDimensions from "../hoc/WindowSize";
 
 const setActive = ({ isActive }) =>
   isActive ? "nav-item__nav-link--active" : ""; //  активность header-link
 
-
-const Header = ({ pageArray, userData, ...props }) => {
+const Header = ({ pageArray, userData, avatar, ...props }) => {
+  const { width } = useWindowDimensions();
+  if (userData.type === "student") {
+    pageArray = pageArray.slice(0, 3);
+  }
 
   const NaviItems = () => {
     return (
@@ -76,82 +80,101 @@ const Header = ({ pageArray, userData, ...props }) => {
             <span className="navbar-toggler-icon"></span>
           </NavbarToggle>
           <NavbarCollapse id="responsiv-navbar-nav">
-            <Nav className="navbar__profile-phone">
-              <Accordion>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header>
-                    <div className="nav-profile__photo-user">
-                      <img
-                        src={userData.avatar}
-                        className="photo-user__avatar"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <div className="color-grey-700 text-m">
-                        {userData.first_name} {userData.surname}
+            {width > 768 ? (
+              <>
+                <Nav className="mr-auto">
+                  <NaviItems />
+                </Nav>
+                <Nav className="navbar__profile-desktop">
+                  <div className="navbar-nav dropdown">
+                    <div className="nav-item" role="tab">
+                      <div
+                        className="nav-link dropdown-toggle nav-profile"
+                        id="navbarDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <div className="user_avatar nav-photo__avatar">
+                          <div
+                            className="photo-user__avatar"
+                            style={avatar}
+                          ></div>
+                          <div className="photo-user__name">
+                            {userData.first_name.charAt(0)}
+                            {userData.surname.charAt(0)}
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="color-grey-700 text-s">
+                            {userData.first_name} {userData.surname}
+                          </div>
+                          <div className="color-grey-600 text-xxs">
+                            {userData.type === "teacher"
+                              ? "Преподаватель"
+                              : "Студент"}
+                          </div>
+                        </div>
                       </div>
-                      <div className="color-grey-600 text-s">
-                        {userData.role_ru}
-                      </div>
-                    </div>
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    <UserItems />
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-            </Nav>
-            <Nav className="mr-auto">
-              <NaviItems />
-            </Nav>
-            <Nav className="navbar__profile-desktop">
-              <div className="navbar-nav dropdown">
-                <div className="nav-item" role="tab">
-                  <div
-                    className="nav-link dropdown-toggle nav-profile"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <div className="nav-profile__photo-user">
-                      <img
-                        src={userData.avatar}
-                        className="photo-user__avatar"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <div className="color-grey-700 text-s">
-                        {userData.first_name} {userData.surname}
-                      </div>
-                      <div className="color-grey-600 text-xxs">
-                        {userData.type === "teacher"? "Преподаватель" : "Студент"}
+                      <div
+                        className="dropdown-menu"
+                        aria-labelledby="navbarDropdown"
+                      >
+                        <UserItems />
+                        <div className="dropdown-divider"></div>
+                        <Link
+                          className="dropdown-menu__link dropdown__exit text-s color-red-900"
+                          to="/"
+                        >
+                          Выйти из системы
+                        </Link>
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="dropdown-menu"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <UserItems />
-                    <div className="dropdown-divider"></div>
-                    <Link
-                      className="dropdown-menu__link dropdown__exit text-s color-red-900"
-                      to="/"
-                    >
-                      Выйти из системы
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Nav>
-            <Nav className="profile-phone__exit dropdown__exit">
-              <Link className="color-red-900 text-m" to="/">
-                Выйти из системы
-              </Link>
-            </Nav>
+                </Nav>
+              </>
+            ) : (
+              <>
+                <Nav className="navbar__profile-phone">
+                  <Accordion>
+                    <Accordion.Item eventKey="0">
+                      <Accordion.Header>
+                        <div className="user_avatar nav-photo__avatar">
+                          <div
+                            className="photo-user__avatar"
+                            style={avatar}
+                          ></div>
+                          <div className="photo-user__name">
+                            {userData.first_name.charAt(0)}
+                            {userData.surname.charAt(0)}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="color-grey-700 text-m">
+                            {userData.first_name} {userData.surname}
+                          </div>
+                          <div className="color-grey-600 text-s">
+                            {userData.role_ru}
+                          </div>
+                        </div>
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        <UserItems />
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </Nav>
+                <Nav className="mr-auto">
+                  <NaviItems />
+                </Nav>
+                <Nav className="profile-phone__exit dropdown__exit">
+                  <Link className="color-red-900 text-m" to="/">
+                    Выйти из системы
+                  </Link>
+                </Nav>
+              </>
+            )}
           </NavbarCollapse>
         </Container>
       </Navbar>

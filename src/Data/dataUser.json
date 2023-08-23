@@ -5,8 +5,9 @@
     "first_name": "Андрей",
     "second_name": "Андреевич",
     "surname": "Андреев",
+    "groups": [],
     "email": "000@mail.ru",
-    "avatar": "https://cdn.pixabay.com/photo/2018/07/08/21/35/human-3524862_1280.jpg"
+    "avatar": "https://www.managementnews.cz/download-3250720-864-1513934726602.jpeg"
   },
   {
     "id": "1",
@@ -14,8 +15,9 @@
     "first_name": "Василий",
     "second_name": "Васильевич",
     "surname": "Васильев",
-    "email": "111@mail.ru",
-    "avatar": "https://get.pxhere.com/photo/outdoor-person-girl-sun-woman-hair-white-photography-cute-summer-female-portrait-model-young-red-fashion-lady-facial-expression-hairstyle-smiling-smile-long-hair-close-up-caucasian-face-dress-happy-happiness-eye-head-skin-beauty-attractive-photo-shoot-pretty-girl-brown-hair-cute-girl-happy-girl-happy-woman-portrait-photography-supermodel-683657.jpg"
+    "groups": [{"id": "0"}, {"id": "1"}, {"id": "3"}, {"id": "4"}, {"id": "5"}],
+    "email": "",
+    "avatar": "https://cdn1.flamp.ru/df271521a12773528a59498632d7ba6a.jpg"
   },
   {
     "id": "2",
@@ -23,8 +25,9 @@
     "first_name": "Иван",
     "second_name": "Иванович",
     "surname": "Иванов",
+    "groups": [],
     "email": "222@mail.ru",
-    "avatar": "https://get.pxhere.com/photo/person-people-portrait-facial-expression-hairstyle-smile-emotion-portrait-photography-134689.jpg"
+    "avatar": "https://ru-static.z-dn.net/files/dc1/debc0aff4f1471bd3ee2a584935ef831.jpg"
   },
   {
     "id": "3",
@@ -32,8 +35,9 @@
     "first_name": "Петр",
     "second_name": "Петрович",
     "surname": "Петров",
+    "groups": [],
     "email": "333@mail.ru",
-    "avatar": "https://get.pxhere.com/photo/person-girl-woman-hair-photography-portrait-model-youth-fashion-blue-lady-hairstyle-smile-long-hair-face-dress-eye-head-skin-beauty-blond-photo-shoot-brown-hair-portrait-photography-108386.jpg"
+    "avatar": "https://ihosairaala.fi/wp-content/uploads/2018/01/Akne-on-erityisesti-nuorten-ihosairaus.jpg"
   },
   {
     "id": "4",
@@ -41,6 +45,7 @@
     "first_name": "Мирон",
     "second_name": "Миронович",
     "surname": "Оксимиронов",
+    "groups": [{"id": "0"}, {"id": "1"}, {"id": "2"}, {"id": "3"}],
     "email": "444@mail.ru",
     "avatar": "https://avatars.mds.yandex.net/get-zen_doc/50509/pub_5dd594c9a29ee0330b84e121_5dd59537ddb0193a8f320251/scale_1200"
   },
@@ -50,6 +55,7 @@
     "first_name": "Скриптонит",
     "second_name": "Скриптонитович",
     "surname": "Скриптонитов",
+    "groups": [],
     "email": "555@mail.ru",
     "avatar": "https://all-aforizmy.ru/wp-content/uploads/2022/01/6936_43430_1a2d8f8dc6.jpg"
   },
@@ -59,8 +65,9 @@
     "first_name": "Чакчак",
     "second_name": "Чакчакович",
     "surname": "Норис",
+    "groups": [],
     "email": "666@mail.ru",
-    "avatar": "https://3.bp.blogspot.com/-mwwHx0xjo6E/XMnK6X2qhLI/AAAAAAAESZw/DAhrHQcpJkwlbIt_OmINRhE-ch0vyGJmACLcBGAs/s1600/ctk-chuck-norris-herec_galerie-980.jpg"
+    "avatar": "http://photogriffon.com/photos-du-monde/The-best-pictures-and-quotes-of-CHUCK-NORRIS-Blagues-et-Biographie/photo-chuck-norris-portrait-picture.jpg"
   },
   {
     "id": "7",
@@ -68,6 +75,7 @@
     "first_name": "Самолет",
     "second_name": "Самолетович",
     "surname": "Байконуров",
+    "groups": [],
     "email": "777@mail.ru",
     "avatar": "https://avatars.mds.yandex.net/get-zen_doc/1542122/pub_5d1280293d1d8800b9bc3e3c_5d1280853d1d8800b9bc3e3f/scale_1200"
   },
@@ -77,8 +85,9 @@
     "first_name": "Тимур",
     "second_name": "Тимурович",
     "surname": "Тимуров",
+    "groups": [{"id": "0"}, {"id": "2"}, {"id": "3"}, {"id": "4"}],
     "email": "888@mail.ru",
-    "avatar": "https://cdn1.flamp.ru/df271521a12773528a59498632d7ba6a.jpg"
+    "avatar": "https://imya-sonnik.ru/wp-content/uploads/2019/10/s1200-86-1.jpg"
   },
   {
     "id": "9",
@@ -86,6 +95,7 @@
     "first_name": "Тетрапак",
     "second_name": "Тетрапапкович",
     "surname": "Молокоев",
+    "groups": [],
     "email": "999@mail.ru",
     "avatar": "https://korzina.su/upload/iblock/79d/79d14cfb9e09a2256eec89db9bd28e3a.jpg"
   },
@@ -95,6 +105,7 @@
     "first_name": "Ольга",
     "second_name": "Ольговна",
     "surname": "Арбузова",
+    "groups": [],
     "email": "1010@mail.ru",
     "avatar": "https://avatars.mds.yandex.net/get-zen_doc/1066925/pub_5fa3c8d2f278637dd48e7180_5fa3c9a8f278637dd4905531/scale_1200"
   },
@@ -104,6 +115,7 @@
     "first_name": "Придумать",
     "second_name": "Придумачев",
     "surname": "Тяжелоев",
+    "groups": [],
     "email": "1111@mail.ru",
     "avatar": "https://media.itpro.co.uk/image/private/s--G0-WwnO1--/v1572898460/itpro/images/dir_215/it_photo_107596.jpg"
   },
@@ -111,10 +123,11 @@
     "id": "12",
     "type": "teacher",
     "first_name": "Следующий",
-    "second_name": "Следующчив",
+    "second_name": "Следующив",
     "surname": "Человек",
+    "groups": [],
     "email": "1212@mail.ru",
-    "avatar": "https://get.pxhere.com/photo/man-person-people-woman-photography-male-portrait-spring-facial-expression-smile-senior-citizen-cool-image-eye-glasses-head-skin-beauty-emotion-portrait-photography-vision-care-209032.jpg"
+    "avatar": "https://i11.fotocdn.net/s122/5636b54d380f18c1/gallery_m/2796768679.jpg"
   },
   {
     "id": "13",
@@ -122,6 +135,7 @@
     "first_name": "Имя",
     "second_name": "Имявич",
     "surname": "Фамилия",
+    "groups": [],
     "email": "1313@mail.ru",
     "avatar": "https://cdn1.flamp.ru/bc57c2126b20646180c92643db78d9f0.jpg"
   },
@@ -131,8 +145,9 @@
     "first_name": "Тыкудаж",
     "second_name": "Откудовна",
     "surname": "Атыгдежева",
+    "groups": [{"id": "0"}, {"id": "2"}, {"id": "3"}, {"id": "4"}],
     "email": "1414@mail.ru",
-    "avatar": "https://get.pxhere.com/photo/person-girl-woman-hair-photography-portrait-model-lady-facial-expression-smile-long-hair-close-up-face-nose-eye-head-skin-beauty-blond-organ-emotion-photo-shoot-brown-hair-portrait-photography-132433.jpg"
+    "avatar": "https://avatars.mds.yandex.net/get-zen_doc/1589949/pub_5f76c21c109e8f703cc1884d_5f76c30b7f726b6a3933f86d/scale_1200"
   },
   {
     "id": "15",
@@ -140,8 +155,9 @@
     "first_name": "Арбидол",
     "second_name": "Ибупрофенович",
     "surname": "Чихчихбеков",
+    "groups": [{"id": "0"}, {"id": "4"}, {"id": "5"}, {"id": "7"}],
     "email": "1515@mail.ru",
-    "avatar": "https://get.pxhere.com/photo/man-landscape-person-hair-city-urban-male-guy-portrait-color-fashion-business-facial-expression-hairstyle-smile-outdoors-face-sunglasses-glasses-eyewear-adult-vision-care-915304.jpg"
+    "avatar": "https://comicbookmovie.com/images/articles/banners/181074.jpg"
   },
   {
     "id": "16",
@@ -149,8 +165,9 @@
     "first_name": "Пред",
     "second_name": "Последович",
     "surname": "Последний",
+    "groups": [{"id": "0"}, {"id": "5"}, {"id": "6"}, {"id": "7"}],
     "email": "1616@mail.ru",
-    "avatar": "https://get.pxhere.com/photo/person-people-girl-woman-hair-photography-portrait-model-spring-child-lady-facial-expression-season-smile-face-dress-eye-head-skin-beauty-blond-emotion-photo-shoot-brown-hair-portrait-photography-151299.jpg"
+    "avatar": "https://i03.fotocdn.net/s130/4fbb2c71429999b1/gallery_m/2934671223.jpg"
   },
   {
     "id": "17",
@@ -158,7 +175,8 @@
     "first_name": "Студент",
     "second_name": "Студентович",
     "surname": "Последний",
+    "groups": [{"id": "0"}, {"id": "4"}, {"id": "6"}, {"id": "7"}],
     "email": "1717@mail.ru",
-    "avatar": "https://cdn.fishki.net/upload/users/2021/05/19/366342/2a5852b006f843032acbfab040a865d1.jpg"
+    "avatar": "https://tpucdn.com/forums/data/avatars/l/157/157930.jpg?1435739116"
   }
 ]

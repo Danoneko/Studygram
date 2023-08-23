@@ -6,14 +6,19 @@ import {
   Pagination,
 } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import dataCourse from "../Data/dataCource.json";
 import dataTask from "../Data/dataTask.json";
 import dataMeeting from "../Data/dataMeeting.json";
 import dataUser from "../Data/dataUser.json";
+import dataGroup from "../Data/dataGroup.json";
 
 import { UsersInBlock } from "../Components/UsersInBlock";
+import { CreateTask } from "../Components/CreateTask";
+import { EditTask } from "../Components/EditTask";
+import { Group } from "./Group";
+
 import useWindowDimensions from "../hoc/WindowSize";
 
 import plus from "../Images/plus.svg";
@@ -69,10 +74,12 @@ const InnerContainer = ({
     bigData = dataMeeting;
   }
 
-  if (props.params !== undefined) {
-    var params = props.params.split("_")[1];
-    // bigData = bigData.filter((a) => a.id_course === params); // работает, но запускает бесонечный цикл
-    nameCourse = dataCourse.find((a) => a.id === params);
+
+  const params = useLocation().pathname.split("/");
+
+  if (params[1] === "courses" && params[2] !== undefined) {
+    bigData = bigData.filter((a) => a.id_course === params[2]); // работает, но запускает бесонечный цикл
+    nameCourse = dataCourse.find((a) => a.id === params[2]);
   }
 
   const [searchTerm, setSearchTerm] = useState(""); // live search
@@ -83,6 +90,9 @@ const InnerContainer = ({
   const [studBlock] = useState([]); // получаемые студенты
   const [currentPage, setCurrentPage] = useState(1); //  текущая страница
   const [blocksPage, setBlocksPage] = useState(10); //  количество страниц
+  const [createTask, setCreateTask] = useState(false); // показ модального окна создания таска
+  const [editTask, setEditTask] = useState(false); // показ модального окна создания таска
+  const [taskEdit, setTaskEdit] = useState({});
 
   const lastBlocksIndex = currentPage * blocksPage; // индекс последней страницы
   const firstBlocksIndex = lastBlocksIndex - blocksPage; // индекс первой страницы
@@ -228,6 +238,7 @@ const InnerContainer = ({
             {" "}
             + {res.length - 1}
           </button>
+
           <div className="tooltip-users" id={"teachers_" + it.id}>
             {res.slice(1).map((a, key) => (
               <div key={key} className="inner-container__block-user">
@@ -246,6 +257,61 @@ const InnerContainer = ({
     }
 
     // console.log(res);
+  }
+
+  function group(it) {
+    var groups = [];
+    var users = [];
+    var groups_users = [];
+
+    var tasks = dataTask.filter((a) => a.id_course === it.id);
+    tasks.filter((a) => groups.push(...a.groups));
+    tasks.filter((a) => users.push(...a.students));
+
+    var meets = dataMeeting.filter((a) => a.id_course === it.id);
+    meets.filter((a) => groups.push(...a.groups));
+    meets.filter((a) => users.push(...a.students));
+
+    // удаляем дубликаты
+    var res1 = groups.filter(
+      (thing, index, self) => index === self.findIndex((t) => t.id === thing.id)
+    );
+    var res2 = users.filter(
+      (thing, index, self) => index === self.findIndex((t) => t.id === thing.id)
+    );
+
+    // по полученным id находим сами группы в dataGroup и пользователей в dataUser
+    var rez1 = res1.map((i) => dataGroup.find((a) => a.id === i.id));
+    var rez2 = res2.map((i) => dataUser.find((a) => a.id === i.id));
+
+    // console.log(it.name, rez1);
+    // console.log(it.name, rez2);
+
+    rez1.map((a) =>
+      a.users.map((b) =>
+        dataUser.find((c) => (c.id === b.id ? groups_users.push(c) : ""))
+      )
+    );
+
+    var clear_users = rez2.filter(x => !groups_users.includes(x));;
+
+
+
+    // console.log(it.name, groups_users);
+    // console.log(it.name, clear_users);
+
+    return (
+      <>
+        {rez1.map((a, key) => (
+          <Group it={it} key={key} id_group={a.id} />
+        ))}
+        <UsersInBlock
+          it={it}
+          name={name}
+          studBlock={clear_users}
+        />
+      </>
+    );
   }
 
   function sorting(value) {
@@ -337,12 +403,32 @@ const InnerContainer = ({
     }
   }
 
+  function editTasks(it) {
+    setTaskEdit(it);
+    setEditTask(true);
+  }
+
   return (
     // основной внутренний контейнер
     <div className="inner-container">
-      <div className="inner-container__header">
+      <CreateTask
+        bigData={bigData}
+        name={name}
+        show={createTask}
+        setCreateTask={setCreateTask}
+        onHide={() => setCreateTask(false)}
+      />
+      <EditTask
+        bigData={bigData}
+        name={name}
+        show={editTask}
+        setEditTask={setEditTask}
+        item={taskEdit}
+        onHide={() => setEditTask(false)}
+      />
+      <div className="inner-container__head">
         <h1 className="title-m">
-          {props.params !== undefined ? (
+          {params[1] === "courses" && params[2] !== undefined? (
             <>
               {nameCourse.name}:{" "}
               <span className="title-ms">{innerArray.status}</span>
@@ -352,12 +438,10 @@ const InnerContainer = ({
           )}{" "}
         </h1>
         <div>
-          <Button variant="primary">
+          <Button variant="primary" onClick={() => setCreateTask(true)}>
             {" "}
             <img
               src={plus}
-              width="10px"
-              height="10px"
               alt="Создать"
               className="filters__img"
             />
@@ -440,26 +524,8 @@ const InnerContainer = ({
                 ) : (
                   ""
                 )}
-                <div className="inner-container__head-block">
-                  Преподаватели
-                  {/* <div
-              onClick={() => {
-                sorting("teachers");
-              }}
-              >
-                {imageSort}
-              </div> */}
-                </div>
-                <div className="inner-container__head-block">
-                  Участники
-                  {/* <div
-              onClick={() => {
-                sorting("name");
-              }}
-              >
-                {imageSort}
-              </div> */}
-                </div>
+                <div className="inner-container__head-block">Преподаватели</div>
+                <div className="inner-container__head-block">Участники</div>
                 <div className="inner-container__head-block">
                   Статус
                   <div
@@ -473,7 +539,7 @@ const InnerContainer = ({
               </ListGroup.Item>
               {currentBlocksIndex.map((it, key) => (
                 <ListGroup.Item className="inner-container__block" key={key}>
-                  <div className="form-check inner-container__name">
+                  <div className="form-check inner-container__block-name">
                     <input
                       type="checkbox"
                       className="form-check-input"
@@ -491,9 +557,7 @@ const InnerContainer = ({
                           {dataCourse.find((i) => i.id === it.id_course).name}
                         </div>
                         <div>
-                          <Link to={name + "_" + it.id}>
-                            {it.name} {it.id}
-                          </Link>
+                          <Link to={it.id}>{it.name}</Link>
                         </div>
                       </label>
                     ) : (
@@ -501,16 +565,14 @@ const InnerContainer = ({
                         className="form-check-label"
                         htmlFor={"block_" + it.id}
                       >
-                        <Link to={name + "_" + it.id}>
-                          {it.name} {it.id}
-                        </Link>
+                        <Link to={it.id}>{it.name}</Link>
                       </label>
                     )}
                   </div>
 
                   {name !== "courses" ? (
                     <div className="inner-container__block-date">
-                      {replaceDate(it.date_start)} -
+                      {replaceDate(it.date_start)} -{" "}
                       {replaceDate(it.date_finish)}
                     </div>
                   ) : (
@@ -521,12 +583,21 @@ const InnerContainer = ({
                     {teach(it)}
                   </div>
                   <div className="inner-container__block-teachers-students">
-                    <UsersInBlock
-                      it={it}
-                      bigData={bigData}
-                      name={name}
-                      studBlock={studBlock}
-                    />
+                    {it.groups !== undefined && it.groups !== [] ? (
+                      <>
+                        {it.groups.map((a) => (
+                          <Group it={it} key={a.id} id_group={a.id} />
+                        ))}
+                        <UsersInBlock
+                          it={it}
+                          bigData={bigData}
+                          name={name}
+                          studBlock={studBlock}
+                        />
+                      </>
+                    ) : (
+                      group(it)
+                    )}
                   </div>
                   <div className="inner-container__block-status">
                     <div
@@ -570,7 +641,11 @@ const InnerContainer = ({
                           </button>
                         </li>
                         <li>
-                          <button className="dropdown-item" type="button">
+                          <button
+                            className="dropdown-item"
+                            type="button"
+                            onClick={() => editTasks(it)}
+                          >
                             Редактировать
                           </button>
                         </li>
@@ -706,6 +781,15 @@ const InnerContainer = ({
                                 : (!changeStatuses, "Восстановить")}
                             </button>
                           </li>
+                          <li>
+                            <button
+                              className="dropdown-item"
+                              type="button"
+                              onClick={() => editTasks(it)}
+                            >
+                              Редактировать
+                            </button>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -714,7 +798,7 @@ const InnerContainer = ({
                       className="form-check-label form-check block-phone-inner"
                       htmlFor={"block_" + it.id}
                     >
-                      <div className="inner-container__name">
+                      <div className="inner-container__block-name">
                         {name !== "courses" ? (
                           <>
                             <div className="text-xxs color-grey-400 heading-block">
@@ -724,7 +808,7 @@ const InnerContainer = ({
                               }
                             </div>
                             <div>
-                              <Link to={name + "_" + it.id}>
+                              <Link to={it.id}>
                                 {it.name} {it.id}
                               </Link>
                             </div>
@@ -732,7 +816,7 @@ const InnerContainer = ({
                         ) : (
                           <>
                             <div className="heading-block">Название курса</div>
-                            <Link to={name + "_" + it.id}>
+                            <Link to={it.id}>
                               {it.name} {it.id}
                             </Link>
                           </>
@@ -744,7 +828,7 @@ const InnerContainer = ({
                             Дата
                           </div>
                           <div className="inner-container__block-date">
-                            {replaceDate(it.date_start)} -
+                            {replaceDate(it.date_start)} -{" "}
                             {replaceDate(it.date_finish)}
                           </div>
                         </>
@@ -761,12 +845,21 @@ const InnerContainer = ({
                         Студенты
                       </div>
                       <div className="inner-container__block-teachers-students">
+                      {it.groups !== undefined && it.groups !== [] ? (
+                      <>
+                        {it.groups.map((a) => (
+                          <Group it={it} key={a.id} id_group={a.id} />
+                        ))}
                         <UsersInBlock
                           it={it}
                           bigData={bigData}
                           name={name}
                           studBlock={studBlock}
                         />
+                      </>
+                    ) : (
+                      group(it)
+                    )}
                       </div>
                       <div className="heading-block heading-block-margin">
                         Статус

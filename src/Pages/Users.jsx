@@ -1,89 +1,76 @@
 import React, { useState } from "react";
-import { Container, Accordion } from "react-bootstrap";
 
-import { FiltersUser } from "../Components/FiltersUser";
-import { FiltersStatus } from "../Components/FilterStatus";
-import useWindowDimensions from "../Components/WindowSize"
+import { Container, Button } from "react-bootstrap";
 
-import filterImg from "../Images/filters.png";
+import { NavLink, Outlet } from "react-router-dom";
+
+import { CreateGroup } from "../Components/CreateGroup";
+import { CreateUser } from "../Components/CreateUser";
+
+import plus from "../Images/plus.svg";
 
 const Users = (props) => {
-  const [teachers, setTeachers] = useState([]); //  состояние преподавателей
-  const [students, setStudents] = useState([]); //  состояние студентов
-  const [status, setStatus] = useState([]); //  состояние статусa
-  // console.log("Teachers", teachers);
-  // console.log("Students", students);
-  // console.log("Status", status);
+  const [createGroupe, setCreateGroup] = useState(false); // показ модального окна создания группы
+  const [createUser, setСreateUser] = useState(false); // показ модального окна создания пользователя
 
-  const fil = document.querySelectorAll(".filter");
-  // console.log(fil.length);
+  const setActive = ({ isActive }) =>
+    isActive ? "users__nav-link--active" : ""; //  активность header-link
 
-  const { height, width } = useWindowDimensions();
-  // console.log("width", width, "height", height,);
-
-
+  const usersArray = [
+    { id: "all_users", title: "Все пользователи" },
+    { id: "teachers", title: "Преподаватели" },
+    { id: "groups", title: "Группы" },
+    { id: "applications", title: "Заявки" },
+  ];
 
   return (
     <Container className="external-container">
-      <div className="external-container__filters">
-        {width > 768 ? 
-          <>
-            <FiltersUser
-              setValue={setTeachers}
-              nameuser="teacher"
-              titlefilter="Преподаватели"
-            />
-            <FiltersUser
-              setValue={setStudents}
-              nameuser="student"
-              titlefilter="Студенты"
-            />
-            <FiltersStatus titlefilter="Статусы" setValue={setStatus} />
-          </>
-         : 
-          <>
-            <Accordion className="external-container__filters--phone">
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  <img src={filterImg} alt="Фильтры" className="filters__img" />
-                  <div className="text-m">Фильтры ({fil.length})</div>
-                </Accordion.Header>
-                <Accordion.Body>
-                  <FiltersUser
-                    setValue={setTeachers}
-                    nameuser="teacher"
-                    titlefilter="Преподаватели"
-                  />
-                  <FiltersUser
-                    setValue={setStudents}
-                    nameuser="student"
-                    titlefilter="Студенты"
-                  />
-                  <FiltersStatus titlefilter="Статусы" setValue={setStatus} />
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-          </>
-        }
-
-      </div>
-
+      <CreateGroup
+        show={createGroupe}
+        setCreateGroup={setCreateGroup}
+        onHide={() => setCreateGroup(false)}
+      />
+      <CreateUser
+        show={createUser}
+        setСreateUser={setСreateUser}
+        onHide={() => setСreateUser(false)}
+      />
       <Container className="external-container__inner">
-        <h1 className="title-m">{props.titlePage}</h1>
-        <div>
-          {teachers.map((user, index) => (
-            <p key={index}>
-              {user.name} {user.surname}
-            </p>
-          ))}
-          {students.map((user, index) => (
-            <p key={index}>
-              {user.name} {user.surname}
-            </p>
-          ))}
-          {status.map((user, index) => (
-            <p key={index}>{user.title}</p>
-          ))}
+        <div className="inner-container">
+          <div className="inner-container__head users__button">
+            <h1 className="title-m">Пользователи</h1>
+            <div className="users__button">
+              <Button
+                variant="primary"
+                className="button-create"
+                onClick={() => setCreateGroup(true)}
+              >
+                {" "}
+                <img src={plus} alt="Создать" className="filters__img" />
+                Добавить группу
+              </Button>
+              <Button
+                variant="primary"
+                className="button-create"
+                onClick={() => setСreateUser(true)}
+              >
+                {" "}
+                <img src={plus} alt="Создать" className="filters__img" />
+                Добавить пользователя
+              </Button>
+            </div>
+          </div>
+          <div className="users__header">
+            {usersArray.map((a, key) => (
+              <div className="users__nav-link" key={key}>
+                <NavLink className={setActive} to={a.id}>
+                  {a.title}
+                </NavLink>
+              </div>
+            ))}
+          </div>
+
+          <Outlet />
         </div>
       </Container>
     </Container>

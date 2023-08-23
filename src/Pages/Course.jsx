@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
 import { Container, Accordion } from "react-bootstrap";
 
 import { FiltersUser } from "../Components/FiltersUser";
@@ -19,7 +18,6 @@ const Course = ({ pageArray, ...props }) => {
   // console.log("Students", students);
   // console.log("Status", status);
 
-  const params = useParams().id_course;
 
   const fil = document.querySelectorAll(".filters");
   // console.log(fil.length);
@@ -97,7 +95,6 @@ const Course = ({ pageArray, ...props }) => {
           students={students}
           statuses={statuses}
           course={course}
-          params={params}
         />
         <InnerContainer
           name="meetings"
@@ -106,7 +103,6 @@ const Course = ({ pageArray, ...props }) => {
           students={students}
           statuses={statuses}
           course={course}
-          params={params}
         />
       </Container>
     </Container>
